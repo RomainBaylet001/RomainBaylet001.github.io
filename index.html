@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Romain Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">Romain Photography</div>
+    <nav class="main-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#prints">Prints</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME / GALLERY -->
+    <section id="home" class="section hero">
+      <div class="hero-intro">
+        <p class="hero-tagline">Fine Art Travel & Portrait Photography</p>
+        <p class="hero-location">Based in France • Available worldwide</p>
+      </div>
+
+      <div class="hero-gallery">
+        <!-- Replace these image paths with your real photos -->
+        <img src="images/photo1.jpg" alt="Photo 1">
+        <img src="images/photo2.jpg" alt="Photo 2">
+        <img src="images/photo3.jpg" alt="Photo 3">
+        <img src="images/photo4.jpg" alt="Photo 4">
+        <img src="images/photo5.jpg" alt="Photo 5">
+        <img src="images/photo6.jpg" alt="Photo 6">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <h2>About</h2>
+      <div class="about-content">
+        <p>
+          I’m Romain, a photographer obsessed with light, details and honest moments.
+          My work sits somewhere between travel diary and fine art — quiet, minimal,
+          and focused on atmosphere.
+        </p>
+        <p>
+          I shoot on location around the world and offer prints in limited editions.
+          If a photograph resonates with you, it’s meant to be on your wall, not just
+          on your screen.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRINTS -->
+    <section id="prints" class="section prints">
+      <h2>Prints</h2>
+      <p class="prints-intro">
+        Fine art prints on museum-grade paper. Signed, numbered and shipped worldwide.
+      </p>
+
+      <div class="prints-grid">
+        <!-- PRINT 1 -->
+        <article class="print-item">
+          <img src="prints/print1.jpg" alt="Print 1">
+          <div class="print-meta">
+            <h3>Saigon Lights</h3>
+            <p class="print-size">40 x 60 cm</p>
+            <p class="print-price">€180</p>
+          </div>
+        </article>
+
+        <!-- PRINT 2 -->
+        <article class="print-item">
+          <img src="prints/print2.jpg" alt="Print 2">
+          <div class="print-meta">
+            <h3>Hanoi Morning</h3>
+            <p class="print-size">30 x 45 cm</p>
+            <p class="print-price">€140</p>
+          </div>
+        </article>
+
+        <!-- PRINT 3 -->
+        <article class="print-item">
+          <img src="prints/print3.jpg" alt="Print 3">
+          <div class="print-meta">
+            <h3>Ocean Silence</h3>
+            <p class="print-size">50 x 70 cm</p>
+            <p class="print-price">€220</p>
+          </div>
+        </article>
+
+        <!-- Add more prints by copy/pasting this block -->
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p class="contact-text">
+        For print inquiries, collaborations or commissions, use the form below
+        or email directly:
+        <a href="mailto:youremail@example.com">youremail@example.com</a>
+      </p>
+
+      <!-- Simple mailto form (works on static GitHub Pages) -->
+      <form class="contact-form" action="mailto:youremail@example.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+        <div class="form-row">
+          <label for="message">Message *</label>
+          <textarea id="message" name="Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Romain Photography. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Set current year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
