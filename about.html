@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About – Romain Baylet Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html">Romain Baylet</a>
+        <span class="tagline">Fine Art Photography</span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-hero small">
+      <div class="container">
+        <h1>About Romain</h1>
+        <p>Fine art photographer with a love for light, silence and real emotion.</p>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container two-column about-layout">
+        <div class="about-photo">
+          <!-- Replace with your portrait -->
+          <img src="images/romain-portrait.jpg" alt="Portrait of Romain Baylet" />
+        </div>
+        <div class="about-text">
+          <p>
+            I’m Romain, a photographer obsessed with atmosphere. Before stepping fully into
+            photography, I spent years in fine dining and wine, learning how to read people,
+            rooms and tiny details. Now I do the same thing with a camera.
+          </p>
+          <p>
+            My work is calm, intentional and focused on genuine connection. I’m not interested
+            in forced smiles or stiff poses. I’d rather wait for that one subtle gesture that
+            actually feels like you.
+          </p>
+          <p>
+            I split my time between Europe and Asia, available for weddings, portraits and
+            personal projects worldwide.
+          </p>
+          <p>
+            If you’d like to work together or have a project in mind, I’d love to hear from you.
+          </p>
+          <a href="contact.html" class="btn-secondary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Romain Baylet</span>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
