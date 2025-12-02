@@ -2,39 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TEST – Romain</title>
+  <title>TEST EXTERNAL CSS – Romain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      margin: 0;
-      padding: 40px;
-      background: #111;
-      color: #0f0;
-      font-family: system-ui, sans-serif;
-      font-size: 24px;
-    }
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-    p {
-      margin-top: 0;
-    }
-    .box {
-      margin-top: 30px;
-      padding: 20px;
-      border: 2px solid #0f0;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>IF YOU SEE GREEN TEXT ON BLACK, HTML + CSS WORK.</h1>
-  <p>This is a test page for troubleshooting.</p>
-
-  <div class="box">
-    If this page still looks like normal white text on white background,<br />
-    then the problem is NOT the CSS file. It means the browser is not<br />
-    actually loading this file from GitHub Pages.
-  </div>
+  <h1>IF THE BACKGROUND IS BLACK AND TEXT IS GREEN, EXTERNAL CSS WORKS.</h1>
+  <p>This page uses ONLY styles.css. No inline &lt;style&gt; in this file.</p>
 </body>
 </html>
