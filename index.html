@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <title>Romain Baylet – Fine Art Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Luxury fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -27,7 +27,6 @@
   <main>
     <section class="hero">
       <div class="hero-overlay"></div>
-      <!-- Replace hero.jpg with one of your photos -->
       <div class="hero-image" style="background-image: url('images/hero.jpg');"></div>
       <div class="hero-content container">
         <p class="hero-kicker">Fine Art Photography</p>
@@ -54,8 +53,8 @@
           </p>
           <a href="about.html" class="text-link">More about Romain →</a>
         </div>
+
         <div class="stacked-images">
-          <!-- Replace with your real images -->
           <div class="stacked-frame">
             <img src="images/home-1.jpg" alt="Fine art photograph 1" />
           </div>
@@ -72,38 +71,14 @@
           <h3>Selected work</h3>
           <a href="portfolio.html" class="text-link">See full portfolio →</a>
         </div>
+
         <div class="grid gallery-grid">
-          <!-- 6 sample slots, replace src + alt with your photos -->
-          <div class="gallery-item">
-            <div class="gallery-frame">
-              <img src="images/portfolio-1.jpg" alt="Portfolio image 1" />
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-frame">
-              <img src="images/portfolio-2.jpg" alt="Portfolio image 2" />
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-frame">
-              <img src="images/portfolio-3.jpg" alt="Portfolio image 3" />
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-frame">
-              <img src="images/portfolio-4.jpg" alt="Portfolio image 4" />
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-frame">
-              <img src="images/portfolio-5.jpg" alt="Portfolio image 5" />
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-frame">
-              <img src="images/portfolio-6.jpg" alt="Portfolio image 6" />
-            </div>
-          </div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-1.jpg" alt="Portfolio 1" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-2.jpg" alt="Portfolio 2" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-3.jpg" alt="Portfolio 3" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-4.jpg" alt="Portfolio 4" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-5.jpg" alt="Portfolio 5" /></div></div>
+          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-6.jpg" alt="Portfolio 6" /></div></div>
         </div>
       </div>
     </section>
@@ -112,11 +87,9 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> Romain Baylet</span>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
     </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>
