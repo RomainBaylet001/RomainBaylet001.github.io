@@ -2,100 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Romain Baylet – Fine Art Photography</title>
+  <title>TEST – Romain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #111;
+      color: #0f0;
+      font-family: system-ui, sans-serif;
+      font-size: 24px;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-top: 0;
+    }
+    .box {
+      margin-top: 30px;
+      padding: 20px;
+      border: 2px solid #0f0;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <a href="index.html">Romain Baylet</a>
-        <span class="tagline">Fine Art Photography</span>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <h1>IF YOU SEE GREEN TEXT ON BLACK, HTML + CSS WORK.</h1>
+  <p>This is a test page for troubleshooting.</p>
 
-  <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <!-- Replace hero.jpg with one of your photos -->
-      <div class="hero-image" style="background-image: url('images/hero.jpg');"></div>
-      <div class="hero-content container">
-        <h1>Timeless, poetic photography.</h1>
-        <p>
-          Weddings, portraits and personal work with a quiet, cinematic feel.
-        </p>
-        <a href="portfolio.html" class="btn-primary">View Portfolio</a>
-      </div>
-    </section>
-
-    <section class="home-intro">
-      <div class="container two-column">
-        <div>
-          <h2>Elegant images for people who feel deeply.</h2>
-          <p>
-            I create photographs that feel like memories: soft, honest and full of atmosphere.
-            My work is inspired by cinema, travel and the small, fragile moments most people overlook.
-          </p>
-          <p>
-            Based in Europe and Asia, available for destination work worldwide.
-          </p>
-          <a href="about.html" class="text-link">More about me →</a>
-        </div>
-        <div class="stacked-images">
-          <!-- Replace with your real images -->
-          <img src="images/home-1.jpg" alt="Fine art photo 1" />
-          <img src="images/home-2.jpg" alt="Fine art photo 2" />
-        </div>
-      </div>
-    </section>
-
-    <section class="home-prints">
-      <div class="container">
-        <div class="section-header">
-          <h2>Selected work</h2>
-          <a href="portfolio.html" class="text-link">See full portfolio →</a>
-        </div>
-        <div class="grid gallery-grid">
-          <!-- 6 sample slots, replace src + alt -->
-          <div class="gallery-item">
-            <img src="images/portfolio-1.jpg" alt="Portfolio image 1" />
-          </div>
-          <div class="gallery-item">
-            <img src="images/portfolio-2.jpg" alt="Portfolio image 2" />
-          </div>
-          <div class="gallery-item">
-            <img src="images/portfolio-3.jpg" alt="Portfolio image 3" />
-          </div>
-          <div class="gallery-item">
-            <img src="images/portfolio-4.jpg" alt="Portfolio image 4" />
-          </div>
-          <div class="gallery-item">
-            <img src="images/portfolio-5.jpg" alt="Portfolio image 5" />
-          </div>
-          <div class="gallery-item">
-            <img src="images/portfolio-6.jpg" alt="Portfolio image 6" />
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Romain Baylet</span>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </footer>
+  <div class="box">
+    If this page still looks like normal white text on white background,<br />
+    then the problem is NOT the CSS file. It means the browser is not<br />
+    actually loading this file from GitHub Pages.
+  </div>
 </body>
 </html>
