@@ -130,54 +130,26 @@ p {
   color: #1d1a16;
 }
 
-/* HERO – FADE SLIDER (ONE IMAGE AT A TIME) */
+/* HERO – SINGLE CENTERED IMAGE */
 
-.hero {
+.hero-single {
+  padding: 70px 0 50px;
   border-bottom: 1px solid #e3dccf;
 }
 
-.hero-slider {
-  padding: 0;
+.hero-single-inner {
+  display: flex;
+  justify-content: center;
 }
 
-.slider-fade {
-  position: relative;
+.hero-photo {
+  max-width: 900px;
   width: 100%;
-  height: 60vh;           /* smaller height */
-  max-height: 720px;
-  min-height: 340px;
-  overflow: hidden;
-  background: #111;
-}
-
-.slide-fade {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  animation: fadeSlide 10s infinite ease-in-out;
-}
-
-.slide-fade img,
-.slide-fade {
+  height: auto;
   object-fit: cover;
-  filter: grayscale(25%);
-}
-
-/* 0–40%: visible, 40–50%: crossfade, 50–100%: hidden */
-@keyframes fadeSlide {
-  0%, 40% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
-}
-
-/* offset second slide by half cycle */
-.slide-fade-2 {
-  animation-delay: 5s;
+  border-radius: 10px;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.26);
+  filter: grayscale(20%);
 }
 
 /* SECTIONS */
@@ -471,12 +443,7 @@ p {
     margin-right: 18px;
   }
 
-  .slider-fade {
-    height: 55vh;
-    max-height: 600px;
-  }
-
-  .home-intro {
+  .hero-single {
     padding-top: 50px;
   }
 
@@ -503,9 +470,7 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .slider-fade {
-    height: 50vh;
-    max-height: 520px;
-    min-height: 280px;
+  .hero-photo {
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
   }
 }
