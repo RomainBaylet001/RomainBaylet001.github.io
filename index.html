@@ -9,12 +9,14 @@
 </head>
 
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
         <a href="index.html">Romain Baylet</a>
         <span class="tagline">Fine Art Photography</span>
       </div>
+
       <nav class="main-nav">
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
@@ -24,72 +26,111 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-image" style="background-image: url('images/hero.jpg');"></div>
-      <div class="hero-content container">
-        <p class="hero-kicker">Fine Art Photography</p>
-        <h1>Timeless, poetic images for people who feel deeply.</h1>
-        <p class="hero-subtitle">
-          Weddings, portraits and personal work with a quiet, cinematic feel.
-          Based in Europe and Asia, available worldwide.
+  <!-- HERO SLIDER -->
+  <section class="hero hero-slider">
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide">
+          <img src="images/AP.jpg" alt="Barcelona ghost portrait" />
+        </div>
+
+        <div class="slide">
+          <img src="images/montserrat.jpg" alt="Montserrat landscape" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section class="home-intro">
+    <div class="container two-column">
+      <div>
+        <h2>Photography that feels like memory.</h2>
+
+        <p>
+          I create work that is calm, atmospheric and honest. The focus is always on
+          real gestures, subtle details and the quiet tension between people and places.
         </p>
-        <a href="portfolio.html" class="btn-primary">View Portfolio</a>
-      </div>
-    </section>
 
-    <section class="home-intro">
-      <div class="container two-column">
-        <div>
-          <h2>Photography that feels like memory.</h2>
-          <p>
-            I create work that is calm, atmospheric and honest. The focus is always on real gestures,
-            subtle details and the quiet tension between people and places.
-          </p>
-          <p>
-            My background in fine dining and wine taught me to notice what most people miss.
-            Now I bring that same attention to every frame I shoot.
-          </p>
-          <a href="about.html" class="text-link">More about Romain →</a>
+        <p>
+          My background in fine dining and wine taught me to notice what most people miss.
+          Now I bring that same attention to every frame I shoot.
+        </p>
+
+        <a href="portfolio.html" class="text-link">View portfolio →</a>
+      </div>
+
+      <div class="stacked-images">
+        <div class="stacked-frame">
+          <img src="images/home-1.jpg" alt="Fine art photograph" />
         </div>
 
-        <div class="stacked-images">
-          <div class="stacked-frame">
-            <img src="images/home-1.jpg" alt="Fine art photograph 1" />
+        <div class="stacked-frame stacked-frame-offset">
+          <img src="images/home-2.jpg" alt="Fine art photograph" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="home-prints">
+    <div class="container">
+      <div class="section-header">
+        <h3>Selected work</h3>
+        <a href="portfolio.html" class="text-link">See full portfolio →</a>
+      </div>
+
+      <div class="grid gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="images/portfolio-1.jpg" alt="Portfolio 1" />
           </div>
-          <div class="stacked-frame stacked-frame-offset">
-            <img src="images/home-2.jpg" alt="Fine art photograph 2" />
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="images/portfolio-2.jpg" alt="Portfolio 2" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="images/portfolio-3.jpg" alt="Portfolio 3" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="images/portfolio-4.jpg" alt="Portfolio 4" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="images/portfolio-5.jpg" alt="Portfolio 5" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="images/portfolio-6.jpg" alt="Portfolio 6" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="home-prints">
-      <div class="container">
-        <div class="section-header">
-          <h3>Selected work</h3>
-          <a href="portfolio.html" class="text-link">See full portfolio →</a>
-        </div>
-
-        <div class="grid gallery-grid">
-          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-1.jpg" alt="Portfolio 1" /></div></div>
-          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-2.jpg" alt="Portfolio 2" /></div></div>
-          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-3.jpg" alt="Portfolio 3" /></div></div>
-          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-4.jpg" alt="Portfolio 4" /></div></div>
-          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-5.jpg" alt="Portfolio 5" /></div></div>
-          <div class="gallery-item"><div class="gallery-frame"><img src="images/portfolio-6.jpg" alt="Portfolio 6" /></div></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> Romain Baylet</span>
       <a href="https://www.instagram.com" target="_blank">Instagram</a>
     </div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </footer>
+
 </body>
 </html>
