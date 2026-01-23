@@ -27,109 +27,77 @@
   </div>
 </header>
 
-<main class="contact-page">
-
+<main>
   <section class="contact-hero">
-    <div class="container">
+    <div class="container" style="max-width: 720px;">
       <h1 class="contact-title">Get in touch</h1>
+      <p class="contact-subtitle">
+        For commissions and enquiries. I read everything and reply personally.
+      </p>
     </div>
   </section>
 
-  <section class="contact-form-section">
-    <div class="container">
+  <section class="contact-wrap">
+    <div class="success-panel" id="successPanel">
+      <strong>Message sent.</strong>
+      Thank you. I’ll reply personally.
+    </div>
 
-      <div class="contact-success" id="contactSuccess" aria-live="polite">
-        <p class="success-title">Message sent.</p>
-        <p class="success-subtitle">Thank you. I’ll reply personally.</p>
-        <p class="success-small">
-          If you don’t hear back within 48 hours, email directly:
-          <a class="contact-email-link" href="mailto:romainbaylet@icloud.com">romainbaylet@icloud.com</a>
-        </p>
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeejjjkz" method="POST">
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Name *</label>
+          <input id="name" name="name" type="text" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="email">Email address *</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+
+        <div class="field full">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <!-- Helps Formspree route replies -->
+        <input type="hidden" name="_subject" value="New enquiry — RomainBaylet.com">
       </div>
 
-      <form class="contact-form" id="contactForm"
-            action="https://formspree.io/f/xeejjjkz"
-            method="POST">
+      <div class="contact-actions">
+        <button class="contact-button" type="submit" id="sendBtn">Send message</button>
 
-        <input type="text" name="_gotcha" style="display:none">
-        <input type="hidden" name="_subject" value="New enquiry – Romain Baylet">
+        <div class="contact-direct">
+          Or email directly: <a href="mailto:romainbaylet@icloud.com">romainbaylet@icloud.com</a>
+        </div>
+      </div>
 
-        <label class="field">
-          <span class="field-label">Name *</span>
-          <input class="field-input" type="text" name="name" required>
-        </label>
-
-        <label class="field">
-          <span class="field-label">Email address *</span>
-          <input class="field-input" type="email" name="email" required>
-        </label>
-
-        <label class="field">
-          <span class="field-label">Phone</span>
-          <input class="field-input" type="tel" name="phone">
-        </label>
-
-        <label class="field">
-          <span class="field-label">Message *</span>
-          <textarea class="field-textarea" name="message" rows="7" required></textarea>
-        </label>
-
-        <button class="contact-button" id="contactBtn" type="submit">
-          Send message
-        </button>
-
-        <p class="form-status" id="formStatus" aria-live="polite"></p>
-
-        <p class="contact-note">
-          Or email directly:
-          <a href="mailto:romainbaylet@icloud.com" class="contact-email-link">
-            romainbaylet@icloud.com
-          </a>
-        </p>
-
-      </form>
-
-    </div>
+      <div class="form-status" id="formStatus"></div>
+    </form>
   </section>
-
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
     <span>© <span id="year"></span> Romain Baylet</span>
-
-    <div class="footer-links">
-      <a href="mailto:romainbaylet@icloud.com">Email</a>
-      <span class="footer-separator">•</span>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
-    </div>
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const form = document.getElementById("contactForm");
-    const btn = document.getElementById("contactBtn");
     const statusEl = document.getElementById("formStatus");
-    const successEl = document.getElementById("contactSuccess");
-
-    function setStatus(msg, cls) {
-      statusEl.textContent = msg;
-      statusEl.classList.remove("is-success", "is-error");
-      if (cls) statusEl.classList.add(cls);
-    }
+    const btn = document.getElementById("sendBtn");
+    const successPanel = document.getElementById("successPanel");
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      setStatus("", null);
-
-      const originalBtnText = btn.textContent;
+      statusEl.textContent = "";
+      statusEl.className = "form-status";
       btn.disabled = true;
-      btn.textContent = "Sending…";
 
       try {
         const formData = new FormData(form);
-
         const res = await fetch(form.action, {
           method: "POST",
           body: formData,
@@ -137,20 +105,18 @@
         });
 
         if (res.ok) {
+          successPanel.classList.add("is-visible");
           form.reset();
-          setStatus("Thank you.", "is-success");
-          form.classList.add("is-sent");
-          successEl.classList.add("is-visible");
-          [...form.querySelectorAll("input, textarea, button")].forEach(el => el.setAttribute("tabindex", "-1"));
+          statusEl.textContent = "";
         } else {
-          setStatus("Something went wrong. Please email me directly.", "is-error");
-          btn.disabled = false;
-          btn.textContent = originalBtnText;
+          statusEl.textContent = "Something went wrong. Please try again.";
+          statusEl.classList.add("is-error");
         }
       } catch (err) {
-        setStatus("Network error. Please email me directly.", "is-error");
+        statusEl.textContent = "Network error. Please try again.";
+        statusEl.classList.add("is-error");
+      } finally {
         btn.disabled = false;
-        btn.textContent = originalBtnText;
       }
     });
   </script>
