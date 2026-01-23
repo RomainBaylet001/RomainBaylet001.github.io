@@ -2,67 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About – Romain Baylet Photography</title>
+  <title>About – Romain Baylet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <a href="index.html">Romain Baylet</a>
-        <span class="tagline">Fine Art Photography</span>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="index.html">Romain Baylet</a>
+      <span class="tagline">Fine Art Photography</span>
     </div>
-  </header>
 
-  <main class="page">
-    <section class="page-hero small">
-      <div class="container">
-        <h1>About Romain</h1>
-        <p>Fine art photographer creating emotional, atmospheric images.</p>
-      </div>
-    </section>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <section class="page-content">
-      <div class="container two-column about-layout">
+<main>
+  <section style="padding: 90px 0 110px;">
+    <div class="container" style="max-width: 720px;">
+      <h1 style="font-size: 1.35rem; letter-spacing: 0.24em; text-transform: uppercase;">
+        About
+      </h1>
 
-        <div class="about-photo">
-          <img src="images/romain-portrait.jpg" alt="Portrait of Romain Baylet" />
-        </div>
+      <p style="margin-top: 18px;">
+        I create photographs that feel like memories — quiet, cinematic, and honest.
+        My work is guided by light, atmosphere, and the small moments most people overlook.
+      </p>
 
-        <div class="about-text">
-          <p>
-            I'm Romain — a photographer obsessed with atmosphere and real emotion. 
-            My background in fine dining shaped the way I observe people and light.
-          </p>
-          <p>
-            My goal is simple: create images that feel like memories. Quiet, cinematic, and deeply human.
-          </p>
-          <p>
-            Based between Europe and Asia, available worldwide for weddings, portraits and editorial work.
-          </p>
-          <a href="contact.html" class="btn-secondary">Get in touch</a>
-        </div>
+      <p style="margin-top: 14px;">
+        Based between Europe and Asia. Available for destination commissions worldwide.
+      </p>
 
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Romain Baylet</span>
-      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <p style="margin-top: 22px;">
+        For enquiries, please use the contact page or email directly:
+        <a class="contact-email-link" href="mailto:romainbaylet@icloud.com">romainbaylet@icloud.com</a>
+      </p>
     </div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  </footer>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Romain Baylet</span>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+
 </body>
 </html>
