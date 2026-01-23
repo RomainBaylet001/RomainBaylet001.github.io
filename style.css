@@ -100,199 +100,42 @@ p {
 }
 
 /* =========================
-   CONTACT PAGE
+   ABOUT — SIMPLE / LUXE
 ========================= */
 
-.contact-page {
-  background-color: #f7f5f0;
+.page-about-simple {
+  padding: 90px 0 120px;
 }
 
-.contact-hero {
-  padding: 90px 0 28px;
+.about-simple {
+  max-width: 720px;
 }
 
-.contact-title {
-  text-align: center;
-  font-size: clamp(2.4rem, 4vw, 3.1rem);
-  letter-spacing: 0.01em;
-}
-
-.contact-form-section {
-  padding-bottom: 120px;
-}
-
-/* =========================
-   SUCCESS PANEL (HIDDEN)
-========================= */
-
-.contact-success {
-  max-width: 560px;
-  margin: 0 auto 22px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-  transition: opacity 0.45s ease, transform 0.45s ease;
-  height: 0;
-  overflow: hidden;
-}
-
-.contact-success.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  height: auto;
-  overflow: visible;
+.about-simple-image {
+  width: 180px;
   margin-bottom: 28px;
 }
 
-.success-title {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #2f2a24;
-}
-
-.success-subtitle {
-  margin-top: 10px;
-  color: #6a6256;
-}
-
-.success-small {
-  margin-top: 12px;
-  font-size: 0.86rem;
-  color: #9a9184;
-}
-
-/* =========================
-   FORM
-========================= */
-
-.contact-form {
-  max-width: 560px;
-  margin: 0 auto;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.contact-form.is-sent {
-  opacity: 0.15;
-  transform: translateY(6px);
-  pointer-events: none;
-  user-select: none;
-}
-
-.field {
-  padding: 26px 0;
-}
-
-.field-label {
-  display: block;
-  text-align: center;
-  font-family: "Playfair Display", serif;
-  font-size: 0.95rem;
-  color: #6a6256;
-  margin-bottom: 14px;
-}
-
-.field-input,
-.field-textarea {
+.about-simple-image img {
   width: 100%;
-  border: none;
-  border-bottom: 1px solid #d8d0c3;
-  background: transparent;
-  padding: 10px 8px 12px;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  color: #2f2a24;
-  outline: none;
-  transition: border-color 0.2s ease;
+  border-radius: 10px;
+  border: 1px solid #e4ded4;
 }
 
-.field-input {
-  text-align: center;
-}
-
-.field-textarea {
-  min-height: 140px;
-  resize: vertical;
-  text-align: left;
-}
-
-.field-input:focus,
-.field-textarea:focus {
-  border-bottom-color: #2f2a24;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.contact-button {
-  display: block;
-  margin: 30px auto 0;
-  padding: 14px 32px;
-  border-radius: 999px;
-  border: 1px solid #2f2a24;
-  background: transparent;
-  color: #2f2a24;
-  font-size: 0.72rem;
+.about-simple-title {
+  font-size: 1.35rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.contact-button:hover {
-  background: #2f2a24;
-  color: #f7f5f0;
-  transform: translateY(-1px);
-}
-
-.contact-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* =========================
-   FORM STATUS
-========================= */
-
-.form-status {
-  text-align: center;
-  margin-top: 18px;
-  font-size: 0.85rem;
-  color: #9a9184;
-  min-height: 1.2em;
-}
-
-.form-status.is-success {
-  color: #6a6256;
-}
-
-.form-status.is-error {
-  color: #7a5d55;
-}
-
-/* =========================
-   CONTACT NOTE
-========================= */
-
-.contact-note {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.85rem;
-  color: #9a9184;
-}
-
-.contact-email-link {
+  margin: 0;
   color: #2f2a24;
-  border-bottom: 1px solid rgba(47, 42, 36, 0.3);
-  padding-bottom: 2px;
 }
 
-.contact-email-link:hover {
-  border-bottom-color: rgba(47, 42, 36, 0.55);
+.about-simple-text {
+  margin-top: 26px;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #6a6256;
+  max-width: 520px;
 }
 
 /* =========================
@@ -311,25 +154,6 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.footer-links {
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.footer-links a {
-  color: #9a9184;
-}
-
-.footer-links a:hover {
-  color: #2f2a24;
-}
-
-.footer-separator {
-  margin: 0 8px;
-  color: #c1b8aa;
 }
 
 /* =========================
@@ -359,5 +183,9 @@ p {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+  }
+
+  .about-simple-image {
+    width: 140px;
   }
 }
