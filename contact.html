@@ -38,6 +38,7 @@
   </section>
 
   <section class="contact-wrap">
+
     <div class="success-panel" id="successPanel">
       <strong>Message sent.</strong>
       Thank you. I’ll reply personally.
@@ -60,7 +61,6 @@
           <textarea id="message" name="message" required></textarea>
         </div>
 
-        <!-- Helps Formspree route replies -->
         <input type="hidden" name="_subject" value="New enquiry — RomainBaylet.com">
       </div>
 
@@ -107,7 +107,6 @@
         if (res.ok) {
           successPanel.classList.add("is-visible");
           form.reset();
-          statusEl.textContent = "";
         } else {
           statusEl.textContent = "Something went wrong. Please try again.";
           statusEl.classList.add("is-error");
