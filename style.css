@@ -4,13 +4,9 @@
 
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -20,15 +16,9 @@ body {
   line-height: 1.7;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
 .container {
   width: min(980px, 92vw);
@@ -95,8 +85,38 @@ p {
 }
 
 .main-nav a:hover,
-.main-nav a.active {
-  color: #2f2a24;
+.main-nav a.active { color: #2f2a24; }
+
+/* =========================
+   HOME (pure / luxe)
+========================= */
+
+.home-hero {
+  padding: 70px 0 110px;
+}
+
+.hero-frame {
+  width: min(780px, 92vw);
+  margin: 0 auto;
+  border: 1px solid #e4ded4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f7f5f0;
+}
+
+.hero-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-caption {
+  width: min(780px, 92vw);
+  margin: 18px auto 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #9a9184;
+  letter-spacing: 0.08em;
 }
 
 /* =========================
@@ -107,9 +127,7 @@ p {
   padding: 90px 0 120px;
 }
 
-.about-simple {
-  max-width: 720px;
-}
+.about-simple { max-width: 720px; }
 
 .about-simple-image {
   width: 180px;
@@ -136,6 +154,150 @@ p {
   line-height: 1.9;
   color: #6a6256;
   max-width: 520px;
+}
+
+/* =========================
+   CONTACT (top-tier, no mess)
+========================= */
+
+.contact-hero {
+  padding: 90px 0 26px;
+}
+
+.contact-title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin: 0;
+  color: #2f2a24;
+}
+
+.contact-subtitle {
+  margin-top: 12px;
+  color: #9a9184;
+  max-width: 54ch;
+}
+
+.contact-wrap {
+  padding: 40px 0 120px;
+}
+
+.contact-form {
+  width: min(720px, 92vw);
+  margin: 0 auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 22px;
+  align-items: end;
+  margin-top: 34px;
+}
+
+.field { display: block; }
+
+.field label {
+  display: block;
+  font-family: "Playfair Display", serif;
+  color: #6a6256;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #d8d0c3;
+  background: transparent;
+  padding: 10px 6px 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #2f2a24;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus,
+.field textarea:focus { border-bottom-color: #2f2a24; }
+
+.field textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.field.full { grid-column: 1 / -1; }
+
+.contact-actions {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.contact-button {
+  padding: 14px 30px;
+  border-radius: 999px;
+  border: 1px solid #2f2a24;
+  background: transparent;
+  color: #2f2a24;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+  background: #2f2a24;
+  color: #f7f5f0;
+  transform: translateY(-1px);
+}
+
+.contact-button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.contact-direct {
+  font-size: 0.85rem;
+  color: #9a9184;
+}
+
+.contact-direct a {
+  color: #2f2a24;
+  border-bottom: 1px solid rgba(47, 42, 36, 0.28);
+  padding-bottom: 2px;
+}
+
+.contact-direct a:hover {
+  border-bottom-color: rgba(47, 42, 36, 0.55);
+}
+
+.form-status {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #9a9184;
+  min-height: 1.2em;
+}
+
+.form-status.is-success { color: #6a6256; }
+.form-status.is-error { color: #7a5d55; }
+
+.success-panel {
+  width: min(720px, 92vw);
+  margin: 0 auto 26px;
+  padding: 18px 0;
+  border-top: 1px solid #e4ded4;
+  border-bottom: 1px solid #e4ded4;
+  display: none;
+}
+
+.success-panel.is-visible { display: block; }
+
+.success-panel strong {
+  display: block;
+  font-family: "Playfair Display", serif;
+  color: #2f2a24;
+  margin-bottom: 6px;
 }
 
 /* =========================
@@ -178,14 +340,16 @@ p {
   }
 }
 
+@media (max-width: 700px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .about-simple-image { width: 140px; }
+  .contact-actions { justify-content: flex-start; }
+}
+
 @media (max-width: 600px) {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
-  }
-
-  .about-simple-image {
-    width: 140px;
   }
 }
