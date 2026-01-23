@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -22,7 +22,6 @@
     <nav class="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
   </div>
@@ -39,7 +38,6 @@
   <section class="contact-form-section">
     <div class="container">
 
-      <!-- SUCCESS PANEL (hidden until sent) -->
       <div class="contact-success" id="contactSuccess" aria-live="polite">
         <p class="success-title">Message sent.</p>
         <p class="success-subtitle">Thank you. I’ll reply personally.</p>
@@ -49,15 +47,11 @@
         </p>
       </div>
 
-      <!-- FORM -->
       <form class="contact-form" id="contactForm"
             action="https://formspree.io/f/xeejjjkz"
             method="POST">
 
-        <!-- Anti-spam honeypot -->
         <input type="text" name="_gotcha" style="display:none">
-
-        <!-- Subject -->
         <input type="hidden" name="_subject" value="New enquiry – Romain Baylet">
 
         <label class="field">
@@ -145,12 +139,8 @@
         if (res.ok) {
           form.reset();
           setStatus("Thank you.", "is-success");
-
-          // Fade out form, show success panel
           form.classList.add("is-sent");
           successEl.classList.add("is-visible");
-
-          // Prevent tabbing into hidden form
           [...form.querySelectorAll("input, textarea, button")].forEach(el => el.setAttribute("tabindex", "-1"));
         } else {
           setStatus("Something went wrong. Please email me directly.", "is-error");
