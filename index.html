@@ -2,49 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Romain Baylet – Fine Art Photography</title>
+  <title>Romain Baylet — Fine Art Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Fine art photography by Romain Baylet. Limited edition photographic works." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <a href="index.html">Romain Baylet</a>
-      <span class="tagline">Fine Art Photography</span>
-    </div>
-
-    <nav class="main-nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <div class="wide header-inner">
+    <div class="logo"><a href="index.html">Romain Baylet</a><span class="tagline">Fine Art Photography</span></div>
+    <nav class="main-nav"><a href="index.html" class="active">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
   </div>
 </header>
-
 <main>
-  <section class="home-hero">
-    <div class="hero-frame">
-      <img src="/images/montserrat.JPG" alt="Montserrat landscape photograph">
+  <section class="intro">
+    <p class="eyebrow">Selected work · 001</p>
+    <h1>Photography as an object,<br>not simply an image.</h1>
+  </section>
+  <section class="featured-work">
+    <a class="artwork-link" href="the-crown.html" aria-label="View The Crown">
+      <img src="/images/the-crown.jpg" alt="The Crown — Taj Mahal, Agra, India, 2026, by Romain Baylet">
+    </a>
+    <div class="work-meta">
+      <div><h2><a href="the-crown.html">The Crown</a></h2><p>Taj Mahal, Agra, India · 2026</p></div>
+      <a class="text-link" href="the-crown.html">View artwork</a>
     </div>
-    <div class="hero-caption">A quiet beginning.</div>
   </section>
 </main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <span>© <span id="year"></span> Romain Baylet</span>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</footer>
-
+<footer class="site-footer"><div class="wide footer-inner"><span>© <span id="year"></span> Romain Baylet</span><span>Fine Art Photography</span></div></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

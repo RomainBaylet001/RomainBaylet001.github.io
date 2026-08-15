@@ -20,7 +20,7 @@
     </div>
 
     <nav class="main-nav">
-      <a href="index.html">Home</a>
+      <a href="index.html">Work</a>
       <a href="about.html">About</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
@@ -84,6 +84,11 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const requestedArtwork = new URLSearchParams(window.location.search).get("artwork");
+    if (requestedArtwork) {
+      document.getElementById("message").value = `I am interested in acquiring ${requestedArtwork}.`;
+    }
 
     const form = document.getElementById("contactForm");
     const statusEl = document.getElementById("formStatus");
