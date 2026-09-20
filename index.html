@@ -164,13 +164,13 @@ img {
   color: var(--muted);
 }
 
-/* THREE PHOTOGRAPHS */
+/* THREE EQUAL PHOTOGRAPH FRAMES */
 
 .gallery {
   display: grid;
-  grid-template-columns: 1fr 1.12fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  align-items: center;
+  align-items: start;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -179,18 +179,83 @@ img {
   min-width: 0;
 }
 
-/* AUTOMATIC IMAGE FITTING */
-
 .photo-frame {
+  position: relative;
   width: 100%;
-  overflow: hidden;
+  aspect-ratio: 1 / 1;
 }
 
-.photo-frame img {
+/* CLICKABLE PHOTOGRAPHS */
+
+.photo-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: zoom-in;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* EQUAL THUMBNAIL SIZE */
+
+.photo-thumbnail {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: filter 0.35s ease;
+}
+
+.photo-button:hover .photo-thumbnail {
+  filter: brightness(0.96);
+}
+
+.photo-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+/* LARGE PHOTO PREVIEW ON MOUSE HOVER */
+
+.hover-preview {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .hover-preview {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-width: min(85vw, 1300px);
+    max-height: 85vh;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    background: var(--background);
+    padding: 8px;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.22);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 0.2s ease;
+  }
+
+  .photo-button:hover .hover-preview {
+    opacity: 1;
+    visibility: visible;
+  }
+
 }
 
 /* PHOTOGRAPH CAPTIONS */
@@ -220,6 +285,76 @@ img {
   letter-spacing: 1px;
   color: var(--muted);
   margin-top: 9px;
+}
+
+/* FULL-SCREEN PHOTO VIEWER */
+
+.photo-viewer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 54px 24px 24px;
+  border: none;
+  background: rgba(20, 19, 17, 0.96);
+  color: #f7f5f0;
+  z-index: 1000;
+  overflow: auto;
+}
+
+.photo-viewer:not([open]) {
+  display: none;
+}
+
+.photo-viewer::backdrop {
+  background: rgba(20, 19, 17, 0.96);
+}
+
+.viewer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100% - 24px);
+  gap: 20px;
+}
+
+.viewer-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 160px);
+  object-fit: contain;
+}
+
+.viewer-caption {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.viewer-close {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.viewer-close:hover {
+  background: rgba(255,255,255,0.12);
 }
 
 /* PHOTOGRAPHY STATEMENT */
@@ -330,6 +465,7 @@ img {
   .statement {
     padding: 95px 0;
   }
+
 }
 
 /* IPHONE */
@@ -381,6 +517,20 @@ img {
     align-items: center;
     text-align: center;
   }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .photo-thumbnail,
+  .hover-preview {
+    transition: none;
+  }
+
 }
 
 </style>
@@ -418,7 +568,6 @@ img {
 
 </header>
 
-
 <main>
 
 <!-- INTRODUCTION -->
@@ -442,7 +591,6 @@ img {
 
 </section>
 
-
 <!-- THE THREE PHOTOGRAPHS -->
 
 <section id="collection" class="container">
@@ -454,9 +602,7 @@ img {
 
   </div>
 
-
   <div class="gallery">
-
 
     <!-- LEFT: TAJ MAHAL -->
 
@@ -464,20 +610,36 @@ img {
 
       <div class="photo-frame">
 
-        <img
-          src="images/taj-mahal-golden-hour.JPG.JPG"
-          alt="Golden-hour light on the Taj Mahal in Agra, India"
-          loading="eager"
-          fetchpriority="high"
+        <button
+          class="photo-button"
+          type="button"
+          aria-label="Enlarge In the Light"
+          data-title="In the Light"
+          data-image="images/taj-mahal-golden-hour.JPG.JPG"
         >
+
+          <img
+            class="photo-thumbnail"
+            src="images/taj-mahal-golden-hour.JPG.JPG"
+            alt="Golden-hour light on the Taj Mahal in Agra"
+            loading="eager"
+            fetchpriority="high"
+          >
+
+          <img
+            class="hover-preview"
+            src="images/taj-mahal-golden-hour.JPG.JPG"
+            alt=""
+            aria-hidden="true"
+          >
+
+        </button>
 
       </div>
 
       <div class="photo-caption">
-
         <h3>In the Light</h3>
         <span>01 / 03</span>
-
       </div>
 
       <p class="photo-location">
@@ -486,26 +648,41 @@ img {
 
     </article>
 
-
     <!-- MIDDLE: WOODEN BOAT -->
 
-    <article class="artwork featured">
+    <article class="artwork">
 
       <div class="photo-frame">
 
-        <img
-          src="images/Wooden_boat.JPG"
-          alt="A wooden motorboat crossing green water"
-          loading="eager"
+        <button
+          class="photo-button"
+          type="button"
+          aria-label="Enlarge On the Water"
+          data-title="On the Water"
+          data-image="images/Wooden_boat.JPG"
         >
+
+          <img
+            class="photo-thumbnail"
+            src="images/Wooden_boat.JPG"
+            alt="Wooden motorboat crossing green water"
+            loading="eager"
+          >
+
+          <img
+            class="hover-preview"
+            src="images/Wooden_boat.JPG"
+            alt=""
+            aria-hidden="true"
+          >
+
+        </button>
 
       </div>
 
       <div class="photo-caption">
-
         <h3>On the Water</h3>
         <span>02 / 03</span>
-
       </div>
 
       <p class="photo-location">
@@ -514,26 +691,41 @@ img {
 
     </article>
 
-
     <!-- RIGHT: RED CORRIDOR -->
 
     <article class="artwork">
 
       <div class="photo-frame">
 
-        <img
-          src="images/red.jpg.JPG"
-          alt="A series of red sandstone doorways receding into the distance"
-          loading="eager"
+        <button
+          class="photo-button"
+          type="button"
+          aria-label="Enlarge The Passage"
+          data-title="The Passage"
+          data-image="images/red.jpg.JPG"
         >
+
+          <img
+            class="photo-thumbnail"
+            src="images/red.jpg.JPG"
+            alt="Red sandstone corridor with repeating doorways"
+            loading="eager"
+          >
+
+          <img
+            class="hover-preview"
+            src="images/red.jpg.JPG"
+            alt=""
+            aria-hidden="true"
+          >
+
+        </button>
 
       </div>
 
       <div class="photo-caption">
-
         <h3>The Passage</h3>
         <span>03 / 03</span>
-
       </div>
 
       <p class="photo-location">
@@ -545,7 +737,6 @@ img {
   </div>
 
 </section>
-
 
 <!-- EDITORIAL STATEMENT -->
 
@@ -567,7 +758,6 @@ img {
   </p>
 
 </section>
-
 
 <!-- CONTACT -->
 
@@ -594,7 +784,6 @@ img {
 
 </main>
 
-
 <!-- FOOTER -->
 
 <footer class="site-footer">
@@ -612,6 +801,79 @@ img {
   </div>
 
 </footer>
+
+<!-- FULL-SCREEN PHOTO VIEWER -->
+
+<dialog class="photo-viewer" id="photoViewer" aria-label="Photograph viewer">
+
+  <button
+    type="button"
+    class="viewer-close"
+    id="closeViewer"
+    aria-label="Close photograph"
+  >
+    &times;
+  </button>
+
+  <div class="viewer-content">
+
+    <img
+      class="viewer-image"
+      id="viewerImage"
+      alt=""
+    >
+
+    <div class="viewer-caption" id="viewerCaption"></div>
+
+  </div>
+
+</dialog>
+
+<script>
+
+const viewer = document.getElementById("photoViewer");
+const viewerImage = document.getElementById("viewerImage");
+const viewerCaption = document.getElementById("viewerCaption");
+const closeButton = document.getElementById("closeViewer");
+
+document.querySelectorAll(".photo-button").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const image = button.dataset.image;
+    const title = button.dataset.title;
+    const thumbnail = button.querySelector(".photo-thumbnail");
+
+    viewerImage.src = image;
+    viewerImage.alt = thumbnail.alt;
+
+    viewerCaption.textContent = title;
+
+    if (!viewer.open) {
+      viewer.showModal();
+    }
+
+  });
+
+});
+
+function closePhotoViewer() {
+
+  viewer.close();
+
+}
+
+closeButton.addEventListener("click", closePhotoViewer);
+
+viewer.addEventListener("click", event => {
+
+  if (event.target === viewer) {
+    closePhotoViewer();
+  }
+
+});
+
+</script>
 
 </body>
 </html>
