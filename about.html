@@ -1,405 +1,175 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>About — Romain Baylet Photography</title>
-
-<meta name="description" content="Meet Romain Baylet, a French photographer exploring travel, architecture and everyday life.">
-
-<link rel="icon" href="favicon.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-
-<style>
-
-/* GENERAL DESIGN */
-
-:root {
-  --background: #f7f5f0;
-  --text: #26241f;
-  --muted: #827c72;
-  --line: #dedbd3;
-  --accent: #99816a;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: var(--background);
-  color: var(--text);
-  font-family: "DM Sans", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(1250px, calc(100% - 96px));
-  margin: 0 auto;
-}
-
-
-/* NAVIGATION */
-
-.site-header {
-  padding: 30px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-
-.brand {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.brand-name {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 22px;
-}
-
-.brand-description {
-  font-size: 9px;
-  letter-spacing: 2.3px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.navigation {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-}
-
-.navigation a {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.6px;
-  transition: color 0.3s;
-}
-
-.navigation a:hover {
-  color: var(--accent);
-}
-
-.navigation .active {
-  color: var(--accent);
-}
-
-
-/* ABOUT PAGE */
-
-.about {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 105px 24px 125px;
-}
-
-.eyebrow {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--accent);
-  margin: 0 0 28px;
-}
-
-.about h1 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(46px, 6vw, 80px);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -2px;
-  margin: 0;
-}
-
-.about h1 em {
-  color: var(--accent);
-  font-weight: 400;
-}
-
-.introduction {
-  font-family: "Playfair Display", Georgia, serif;
-  font-style: italic;
-  font-size: clamp(19px, 2.5vw, 25px);
-  line-height: 1.6;
-  color: var(--accent);
-  margin: 30px 0 0;
-}
-
-.about-divider {
-  width: 65px;
-  height: 1px;
-  background: var(--accent);
-  margin: 60px 0;
-}
-
-
-/* PERSONAL STORY */
-
-.story {
-  max-width: 620px;
-}
-
-.story p {
-  font-size: 15px;
-  line-height: 2.1;
-  color: #554e46;
-  margin: 0 0 32px;
-}
-
-.story p:first-child {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 22px;
-  line-height: 1.7;
-  color: var(--text);
-}
-
-
-/* BACK TO PHOTOGRAPHY */
-
-.back-to-work {
-  display: inline-block;
-  margin-top: 45px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--accent);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-
-.back-to-work:hover {
-  color: var(--accent);
-}
-
-
-/* FOOTER */
-
-.site-footer {
-  border-top: 1px solid var(--line);
-  padding: 32px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: 10px;
-  color: var(--muted);
-}
-
-
-/* IPAD */
-
-@media (max-width: 900px) {
-
-  .container {
-    width: min(calc(100% - 48px), 760px);
-  }
-
-  .about {
-    padding: 85px 32px 110px;
-  }
-
-}
-
-
-/* IPHONE */
-
-@media (max-width: 600px) {
-
-  .container {
-    width: calc(100% - 36px);
-  }
-
-  .site-header {
-    padding: 23px 0;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .brand {
-    align-items: center;
-  }
-
-  .navigation {
-    gap: 30px;
-  }
-
-  .about {
-    padding: 75px 24px 95px;
-  }
-
-  .about h1 {
-    font-size: 50px;
-  }
-
-  .about-divider {
-    margin: 45px 0;
-  }
-
-  .story p {
-    font-size: 14px;
-    line-height: 2;
-  }
-
-  .story p:first-child {
-    font-size: 20px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <title>About – Romain Baylet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .page-about-portrait {
+      padding: 10vh 0 12vh;
+    }
+
+    .about-portrait-grid {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(280px, 430px) minmax(320px, 1fr);
+      gap: clamp(32px, 6vw, 90px);
+      align-items: center;
+    }
+
+    .about-portrait-media {
+      position: relative;
+    }
+
+    .about-portrait-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(to right, #f6f4ef 0%, rgba(246,244,239,0) 10%, rgba(246,244,239,0) 90%, #f6f4ef 100%),
+        linear-gradient(to bottom, #f6f4ef 0%, rgba(246,244,239,0) 10%, rgba(246,244,239,0) 90%, #f6f4ef 100%);
+      mix-blend-mode: lighten;
+    }
+
+    .about-portrait-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%),
+                           linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%),
+                  linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+      mask-composite: intersect;
+    }
+
+    .about-portrait-content {
+      max-width: 560px;
+    }
+
+    .about-kicker {
+      margin: 0 0 18px;
+      font-size: .62rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #918a80;
+    }
+
+    .about-portrait-title {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: clamp(2.8rem, 6vw, 5.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin: 0 0 24px;
+    }
+
+    .about-portrait-text {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.05rem, 1.9vw, 1.34rem);
+      line-height: 1.85;
+      color: #625d55;
+      margin: 0;
+    }
+
+    .about-portrait-text p {
+      margin: 0 0 18px;
+    }
+
+    .about-portrait-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 860px) {
+      .page-about-portrait {
+        padding: 7vh 0 10vh;
+      }
+
+      .about-portrait-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-portrait-media {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .about-portrait-content {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-<!-- NAVIGATION -->
-
 <header class="site-header">
-
   <div class="container header-inner">
+    <div class="logo">
+      <a href="index.html">Romain Baylet</a>
+      <span class="tagline">Fine Art Photography</span>
+    </div>
 
-    <a href="index.html" class="brand">
-
-      <span class="brand-name">
-        Romain Baylet
-      </span>
-
-      <span class="brand-description">
-        Fine Art & Travel Photography
-      </span>
-
-    </a>
-
-    <nav class="navigation" aria-label="Main navigation">
-
-      <a href="index.html#collection">Work</a>
-
-      <a href="about.html" class="active" aria-current="page">About</a>
-
+    <nav class="main-nav">
+      <a href="index.html">Work</a>
+      <a href="about.html" class="active">About</a>
       <a href="contact.html">Contact</a>
-
     </nav>
-
   </div>
-
 </header>
 
-
-<!-- ABOUT PAGE -->
-
 <main>
+  <section class="page-about-portrait">
+    <div class="about-portrait-grid">
 
-<section class="about">
+      <div class="about-portrait-media">
+        <img src="images/Romain.JPG" alt="Portrait of Romain Baylet">
+      </div>
 
-  <p class="eyebrow">
-    The Photographer
-  </p>
+      <div class="about-portrait-content">
+        <p class="about-kicker">About</p>
+        <h1 class="about-portrait-title">A quiet way of holding time.</h1>
 
-  <h1>
-    A little<br>
-    <em>about me.</em>
-  </h1>
+        <div class="about-portrait-text">
+          <p>
+            Photography, for me, is a way of holding time —
+            fragments of emotion, light, and stillness preserved as memory.
+          </p>
 
-  <p class="introduction">
-    Curiosity has always taken me further than a map.
-  </p>
+          <p>
+            I’m drawn to atmosphere, simplicity, and the subtle tension between presence and absence.
+            My work often begins with a place, but what interests me most is what lingers beneath the surface:
+            mood, silence, texture, and the feeling a moment leaves behind.
+          </p>
 
-  <div class="about-divider"></div>
+          <p>
+            Through fine art and travel photography, I try to create images that feel both intimate and timeless —
+            less about documentation, and more about resonance.
+          </p>
+        </div>
+      </div>
 
-
-  <!-- MY STORY -->
-
-  <div class="story">
-
-    <p>
-      I'm Romain, a French photographer.
-      Curiosity has taken me across different
-      countries and cultures, and down
-      countless unfamiliar streets.
-    </p>
-
-    <p>
-      Photography is my way of slowing down.
-      Of stopping, looking around, and simply
-      being there. I find myself drawn to the
-      small details, the changing light, and
-      the fleeting moments that are so easy
-      to miss.
-    </p>
-
-    <p>
-      Through travel, architecture, and everyday
-      life, I try to capture a little of what
-      makes each place special. Not just how
-      it looks, but how it feels to be there.
-    </p>
-
-  </div>
-
-
-  <!-- RETURN TO MY PHOTOGRAPHS -->
-
-  <a href="index.html#collection" class="back-to-work">
-    Explore my photographs &rarr;
-  </a>
-
-</section>
-
+    </div>
+  </section>
 </main>
 
-
-<!-- FOOTER -->
-
 <footer class="site-footer">
-
   <div class="container footer-inner">
-
-    <span>
-      &copy; 2026 Romain Baylet. All rights reserved.
-    </span>
-
-    <span>
-      Fine Art & Travel Photography
-    </span>
-
+    <span>© <span id="year"></span> Romain Baylet</span>
   </div>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </footer>
-
 
 </body>
 </html>
