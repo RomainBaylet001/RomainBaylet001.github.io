@@ -3,7 +3,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
 <style>
 
@@ -61,7 +60,6 @@ img {
   margin: 0 auto;
 }
 
-
 /* NAVIGATION */
 
 .site-header {
@@ -85,7 +83,6 @@ img {
 .brand-name {
   font-family: "Playfair Display", Georgia, serif;
   font-size: 22px;
-  letter-spacing: -0.5px;
 }
 
 .brand-description {
@@ -105,13 +102,11 @@ img {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.6px;
-  transition: color 0.3s;
 }
 
 .navigation a:hover {
   color: var(--accent);
 }
-
 
 /* HOMEPAGE INTRODUCTION */
 
@@ -151,8 +146,7 @@ img {
   color: var(--muted);
 }
 
-
-/* PHOTOGRAPHY COLLECTION */
+/* COLLECTION */
 
 .collection-heading {
   display: flex;
@@ -170,6 +164,8 @@ img {
   color: var(--muted);
 }
 
+/* THREE PHOTOGRAPHS */
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1.12fr 1fr;
@@ -183,90 +179,19 @@ img {
   min-width: 0;
 }
 
-.photo-frame {
-  position: relative;
-  overflow: hidden;
-  background: #e9e5dd;
-  aspect-ratio: 3 / 4;
-}
+/* AUTOMATIC IMAGE FITTING */
 
-.artwork.featured .photo-frame {
-  aspect-ratio: 3 / 4.55;
+.photo-frame {
+  width: 100%;
+  overflow: hidden;
 }
 
 .photo-frame img {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 2;
+  height: auto;
+  object-fit: contain;
 }
-
-.photo-frame img[hidden] {
-  display: none;
-}
-
-
-/* TEMPORARY PLACEHOLDERS */
-
-.placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  text-align: center;
-  padding: 24px;
-}
-
-.placeholder span {
-  font-family: "Playfair Display", Georgia, serif;
-  font-style: italic;
-  font-size: 27px;
-  color: #83786d;
-}
-
-.placeholder small {
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #93887c;
-}
-
-.photo-one {
-  background: linear-gradient(
-    155deg,
-    #dedbd4 0%,
-    #edeae4 52%,
-    #cfc9bd 100%
-  );
-}
-
-.photo-two {
-  background: linear-gradient(
-    155deg,
-    #e8d9c5 0%,
-    #d7b99a 55%,
-    #a88c74 100%
-  );
-}
-
-.photo-three {
-  background: linear-gradient(
-    155deg,
-    #d9c2b1 0%,
-    #b68d75 55%,
-    #805a4b 100%
-  );
-}
-
-.photo-frame.has-photo .placeholder {
-  display: none;
-}
-
 
 /* PHOTOGRAPH CAPTIONS */
 
@@ -280,15 +205,14 @@ img {
 
 .photo-caption h3 {
   font-family: "Playfair Display", Georgia, serif;
-  font-weight: 400;
   font-size: 19px;
+  font-weight: 400;
   margin: 0;
 }
 
 .photo-caption span {
   font-size: 10px;
   color: var(--muted);
-  white-space: nowrap;
 }
 
 .photo-location {
@@ -298,15 +222,14 @@ img {
   margin-top: 9px;
 }
 
-
-/* EDITORIAL SECTION */
+/* PHOTOGRAPHY STATEMENT */
 
 .statement {
   padding: 110px 0;
   text-align: center;
 }
 
-.statement .small-title {
+.small-title {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -336,8 +259,7 @@ img {
   margin: 34px auto 0;
 }
 
-
-/* CONTACT SECTION */
+/* CONTACT */
 
 .closing {
   border-top: 1px solid var(--line);
@@ -366,14 +288,12 @@ img {
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  transition: background 0.3s, color 0.3s;
 }
 
 .contact-button:hover {
   background: var(--text);
   color: var(--background);
 }
-
 
 /* FOOTER */
 
@@ -388,9 +308,7 @@ img {
   gap: 20px;
   font-size: 10px;
   color: var(--muted);
-  letter-spacing: 0.5px;
 }
-
 
 /* IPAD */
 
@@ -398,15 +316,6 @@ img {
 
   .container {
     width: min(calc(100% - 48px), 760px);
-  }
-
-  .hero {
-    padding-top: 75px;
-    padding-bottom: 65px;
-  }
-
-  .hero h1 {
-    letter-spacing: -2px;
   }
 
   .gallery {
@@ -421,9 +330,7 @@ img {
   .statement {
     padding: 95px 0;
   }
-
 }
-
 
 /* IPHONE */
 
@@ -442,10 +349,6 @@ img {
     gap: 25px;
   }
 
-  .brand {
-    align-items: center;
-  }
-
   .navigation {
     gap: 30px;
   }
@@ -457,23 +360,12 @@ img {
 
   .hero h1 {
     font-size: clamp(42px, 10vw, 58px);
-    letter-spacing: -2px;
-  }
-
-  .hero-description {
-    font-size: 12px;
   }
 
   .gallery {
     grid-template-columns: 1fr;
     gap: 45px;
     max-width: 480px;
-    margin: 0 auto;
-  }
-
-  .photo-frame,
-  .artwork.featured .photo-frame {
-    aspect-ratio: 3 / 4;
   }
 
   .photo-caption {
@@ -489,24 +381,12 @@ img {
     align-items: center;
     text-align: center;
   }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- NAVIGATION -->
 
@@ -529,9 +409,7 @@ img {
     <nav class="navigation" aria-label="Main navigation">
 
       <a href="#collection">Work</a>
-
       <a href="about.html">About</a>
-
       <a href="contact.html">Contact</a>
 
     </nav>
@@ -541,10 +419,9 @@ img {
 </header>
 
 
-
-<!-- HOMEPAGE INTRODUCTION -->
-
 <main>
+
+<!-- INTRODUCTION -->
 
 <section class="hero container">
 
@@ -566,16 +443,14 @@ img {
 </section>
 
 
-
-<!-- PHOTOGRAPHY COLLECTION -->
+<!-- THE THREE PHOTOGRAPHS -->
 
 <section id="collection" class="container">
 
   <div class="collection-heading">
 
     <span>Selected Works</span>
-
-    <span>01 — India</span>
+    <span>01 — 03</span>
 
   </div>
 
@@ -583,36 +458,24 @@ img {
   <div class="gallery">
 
 
-
-    <!-- PHOTO 1: FRONTAL TAJ MAHAL -->
+    <!-- LEFT: TAJ MAHAL -->
 
     <article class="artwork">
 
-      <div class="photo-frame photo-one">
-
-        <div class="placeholder">
-
-          <span>The Monument</span>
-
-          <small>Photograph coming soon</small>
-
-        </div>
+      <div class="photo-frame">
 
         <img
-          src="images/taj-mahal-frontal.jpg"
-          alt="Taj Mahal, Agra, India"
-          loading="lazy"
-          hidden
-          onload="this.hidden=false;this.parentElement.classList.add('has-photo')"
-          onerror="this.hidden=true"
+          src="images/taj-mahal-golden-hour.JPG.JPG"
+          alt="Golden-hour light on the Taj Mahal in Agra, India"
+          loading="eager"
+          fetchpriority="high"
         >
 
       </div>
 
       <div class="photo-caption">
 
-        <h3>The Monument</h3>
-
+        <h3>In the Light</h3>
         <span>01 / 03</span>
 
       </div>
@@ -624,69 +487,44 @@ img {
     </article>
 
 
-
-    <!-- PHOTO 2: WARM TAJ MAHAL CLOSE-UP -->
+    <!-- MIDDLE: WOODEN BOAT -->
 
     <article class="artwork featured">
 
-      <div class="photo-frame photo-two">
-
-        <div class="placeholder">
-
-          <span>In the Light</span>
-
-          <small>Photograph coming soon</small>
-
-        </div>
+      <div class="photo-frame">
 
         <img
-          src="images/taj-mahal-golden-hour.jpg"
-          alt="Warm golden-hour light on the marble architecture of the Taj Mahal"
-          loading="lazy"
-          hidden
-          onload="this.hidden=false;this.parentElement.classList.add('has-photo')"
-          onerror="this.hidden=true"
+          src="images/Wooden_boat.JPG"
+          alt="A wooden motorboat crossing green water"
+          loading="eager"
         >
 
       </div>
 
       <div class="photo-caption">
 
-        <h3>In the Light</h3>
-
+        <h3>On the Water</h3>
         <span>02 / 03</span>
 
       </div>
 
       <p class="photo-location">
-        Agra, India
+        A Passing Moment
       </p>
 
     </article>
 
 
-
-    <!-- PHOTO 3: RED ARCHITECTURAL CORRIDOR -->
+    <!-- RIGHT: RED CORRIDOR -->
 
     <article class="artwork">
 
-      <div class="photo-frame photo-three">
-
-        <div class="placeholder">
-
-          <span>The Passage</span>
-
-          <small>Photograph coming soon</small>
-
-        </div>
+      <div class="photo-frame">
 
         <img
-          src="images/red-corridor.jpg"
-          alt="Repeating red sandstone doorways in Agra, India"
-          loading="lazy"
-          hidden
-          onload="this.hidden=false;this.parentElement.classList.add('has-photo')"
-          onerror="this.hidden=true"
+          src="images/red.jpg.JPG"
+          alt="A series of red sandstone doorways receding into the distance"
+          loading="eager"
         >
 
       </div>
@@ -694,25 +532,22 @@ img {
       <div class="photo-caption">
 
         <h3>The Passage</h3>
-
         <span>03 / 03</span>
 
       </div>
 
       <p class="photo-location">
-        Agra, India
+        India
       </p>
 
     </article>
-
 
   </div>
 
 </section>
 
 
-
-<!-- PHOTOGRAPHY STATEMENT -->
+<!-- EDITORIAL STATEMENT -->
 
 <section class="statement container">
 
@@ -734,8 +569,7 @@ img {
 </section>
 
 
-
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 
 <section class="closing">
 
@@ -758,9 +592,7 @@ img {
 
 </section>
 
-
 </main>
-
 
 
 <!-- FOOTER -->
@@ -780,7 +612,6 @@ img {
   </div>
 
 </footer>
-
 
 </body>
 </html>
