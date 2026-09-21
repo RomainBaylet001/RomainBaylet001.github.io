@@ -595,7 +595,7 @@
                 role="status"
                 aria-live="polite"
                 aria-atomic="true"
-              >1 / 3</span>
+              >1 / 7</span>
 
               <button class="text-button" id="next" type="button">
                 Next
@@ -800,6 +800,26 @@
         src: "images/red.jpg.JPG",
         title: "Agra, India",
         alt: "Red sandstone corridor with repeating doorways"
+      },
+      {
+        src: "images/Taj2.JPG",
+        title: "Taj Mahal, Agra",
+        alt: "Taj Mahal — second photograph"
+      },
+      {
+        src: "images/Humayun1.JPG",
+        title: "Humayun’s Tomb, Delhi",
+        alt: "Humayun’s Tomb — photograph one"
+      },
+      {
+        src: "images/Humayun2.JPG",
+        title: "Humayun’s Tomb, Delhi",
+        alt: "Humayun’s Tomb — photograph two"
+      },
+      {
+        src: "images/Humayun3.JPG",
+        title: "Humayun’s Tomb, Delhi",
+        alt: "Humayun’s Tomb — photograph three"
       }
     ];
 
@@ -822,6 +842,7 @@
       image.alt = photo.alt;
 
       byId("photoTitle").textContent = photo.title;
+
       byId("counter").textContent =
         (current + 1) + " / " + photos.length;
 
@@ -833,8 +854,10 @@
       if (dialog.open) {
         byId("largeImage").src = photo.src;
         byId("largeImage").alt = photo.alt;
+
         byId("largeCaption").textContent =
-          photo.title + " — " + (current + 1) + " / " + photos.length;
+          photo.title + " — " +
+          (current + 1) + " / " + photos.length;
       }
     }
 
@@ -883,6 +906,14 @@
     }
 
     window.addEventListener("hashchange", () => route(true));
+
+    document.querySelector(".skip-link").addEventListener(
+      "click",
+      event => {
+        event.preventDefault();
+        byId("main").focus();
+      }
+    );
 
     byId("previous").addEventListener("click", () => step(-1));
     byId("next").addEventListener("click", () => step(1));
@@ -1011,6 +1042,7 @@
         }
 
         form.reset();
+
         status.textContent =
           "Thank you. Your message has been sent.";
       } catch {
