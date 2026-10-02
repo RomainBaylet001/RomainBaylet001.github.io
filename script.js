@@ -81,22 +81,20 @@ if (heroImage) {
 
   heroPreload.onload = () => {
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
 
-      heroImage.classList.add("is-loaded");
+      requestAnimationFrame(() => {
 
-    });
+        heroImage.classList.add("is-loaded");
+
+      });
+
+    }, 400);
 
   };
 
 
   heroPreload.onerror = () => {
-
-    /*
-      If the preload fails for any reason,
-      reveal the hero anyway so the page
-      never remains permanently dark.
-    */
 
     heroImage.classList.add("is-loaded");
 
