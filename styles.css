@@ -299,21 +299,21 @@ button:focus-visible {
 
 
 .hero h1 {
-  max-width: 1150px;
+  max-width: 1120px;
 
   margin-bottom: 28px;
 
   font-size: clamp(
-    58px,
-    7.5vw,
-    128px
+    48px,
+    5.8vw,
+    96px
   );
 
   font-weight: 500;
 
-  line-height: 0.91;
+  line-height: 0.95;
 
-  letter-spacing: -0.055em;
+  letter-spacing: -0.05em;
 }
 
 
