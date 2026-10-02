@@ -537,7 +537,7 @@ button:focus-visible {
       100%
     );
 
-  height: 1080px;
+  height: 1160px;
 
   margin:
     0
@@ -587,7 +587,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   CARD POSITIONS
+   9. CARD POSITIONS
    ========================================================= */
 
 .work-card-one {
@@ -611,18 +611,18 @@ button:focus-visible {
 
 
 .work-card-three {
-  top: 570px;
+  top: 540px;
   left: 24%;
 
   z-index: 4;
 
-  width: 48%;
+  width: 46%;
 }
 
 
 
 /* =========================================================
-   WORK IMAGES
+   10. WORK IMAGES
    ========================================================= */
 
 .work-image {
@@ -697,7 +697,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   9. WORK CAPTIONS
+   11. WORK CAPTIONS
    ========================================================= */
 
 .work-caption {
@@ -748,7 +748,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   10. WORK BOTTOM
+   12. WORK BOTTOM
    ========================================================= */
 
 .work-bottom {
@@ -759,7 +759,7 @@ button:focus-visible {
     );
 
   margin:
-    55px
+    25px
     auto
     0;
 
@@ -769,7 +769,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   11. FINE ART
+   13. FINE ART
    ========================================================= */
 
 .fine-art-section {
@@ -975,7 +975,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   12. CONTACT
+   14. CONTACT
    ========================================================= */
 
 .contact-section {
@@ -1044,7 +1044,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   13. ABOUT
+   15. ABOUT
    ========================================================= */
 
 .about-section {
@@ -1128,7 +1128,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   14. FOOTER
+   16. FOOTER
    ========================================================= */
 
 .footer {
@@ -1172,7 +1172,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   15. TABLET
+   17. TABLET
    ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1195,7 +1195,7 @@ button:focus-visible {
 
 
   .work-collage {
-    height: 860px;
+    height: 930px;
   }
 
 
@@ -1210,9 +1210,14 @@ button:focus-visible {
 
 
   .work-card-three {
-    top: 465px;
+    top: 450px;
 
-    width: 50%;
+    width: 48%;
+  }
+
+
+  .work-bottom {
+    margin-top: 20px;
   }
 
 
@@ -1232,7 +1237,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   16. MOBILE
+   18. MOBILE
    ========================================================= */
 
 @media (max-width: 820px) {
@@ -1404,7 +1409,7 @@ button:focus-visible {
 
 
 
-  /* REMOVE COLLAGE ON MOBILE */
+  /* MOBILE PORTFOLIO */
 
   .work-collage {
     position: static;
@@ -1451,8 +1456,6 @@ button:focus-visible {
     padding-top: 13px;
   }
 
-
-  /* RESET FOOD CAPTION FOR MOBILE */
 
   .work-card-two .work-caption {
     position: static;
@@ -1585,7 +1588,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   17. REDUCED MOTION
+   19. REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
