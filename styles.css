@@ -68,6 +68,7 @@ button {
 
 img {
   display: block;
+
   width: 100%;
   max-width: 100%;
 }
@@ -125,6 +126,7 @@ button:focus-visible {
 .logo {
   font-size: 14px;
   font-weight: 600;
+
   letter-spacing: -0.02em;
 }
 
@@ -168,6 +170,7 @@ button:focus-visible {
 
 .nav-contact {
   padding-bottom: 4px;
+
   border-bottom: 1px solid currentColor;
 }
 
@@ -181,6 +184,7 @@ button:focus-visible {
   display: none;
 
   padding: 0;
+
   border: 0;
 
   background: transparent;
@@ -229,17 +233,29 @@ button:focus-visible {
   inset: 0;
 
   background-image: url("./assets/images/hero.JPG");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  transform: scale(1.02);
+  opacity: 0;
 
-  transition: transform 1.4s ease;
+  transform: scale(1.04);
+
+  transition:
+    opacity 1.4s ease,
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-.hero:hover .hero-image {
+.hero-image.is-loaded {
+  opacity: 1;
+
+  transform: scale(1.02);
+}
+
+
+.hero:hover .hero-image.is-loaded {
   transform: scale(1.045);
 }
 
@@ -299,13 +315,21 @@ button:focus-visible {
 
 
 .hero h1 {
+  max-width: 1080px;
+
+  margin-bottom: 28px;
+
   font-size: clamp(
-    42px,
-    10.5vw,
-    60px
+    44px,
+    4.5vw,
+    76px
   );
 
-  line-height: 0.98;
+  font-weight: 500;
+
+  line-height: 0.97;
+
+  letter-spacing: -0.045em;
 }
 
 
@@ -365,6 +389,7 @@ button:focus-visible {
 
 .button-white {
   background: white;
+
   color: #111111;
 }
 
@@ -1146,10 +1171,12 @@ button:focus-visible {
 
   .hero h1 {
     font-size: clamp(
-      52px,
-      14vw,
-      78px
+      42px,
+      10.5vw,
+      60px
     );
+
+    line-height: 0.98;
   }
 
 
