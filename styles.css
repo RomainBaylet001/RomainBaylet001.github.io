@@ -690,6 +690,11 @@ button:focus-visible {
 
   background: var(--background);
 
+
+  padding-top: 135px;
+
+  padding-bottom: 135px;
+
 }
 
 
@@ -709,7 +714,7 @@ button:focus-visible {
 
     auto
 
-    120px;
+    85px;
 
 
   display: grid;
@@ -810,7 +815,7 @@ button:focus-visible {
   column-gap: 22px;
 
 
-  row-gap: 150px;
+  row-gap: 90px;
 
 }
 
@@ -1069,7 +1074,7 @@ button:focus-visible {
 
   margin:
 
-    140px
+    95px
 
     auto
 
@@ -1694,16 +1699,32 @@ button:focus-visible {
 
   .section {
 
-    padding-top: 130px;
+    padding-top: 120px;
 
-    padding-bottom: 130px;
+    padding-bottom: 120px;
+
+  }
+
+
+  .work-section {
+
+    padding-top: 115px;
+
+    padding-bottom: 115px;
+
+  }
+
+
+  .work-intro {
+
+    margin-bottom: 70px;
 
   }
 
 
   .work-gallery {
 
-    row-gap: 110px;
+    row-gap: 75px;
 
   }
 
@@ -1720,6 +1741,13 @@ button:focus-visible {
 
     grid-column:
       1 / 8;
+
+  }
+
+
+  .work-bottom {
+
+    margin-top: 80px;
 
   }
 
@@ -1930,7 +1958,7 @@ button:focus-visible {
 
     padding:
 
-      100px
+      95px
 
       var(--side-padding);
 
@@ -1938,21 +1966,30 @@ button:focus-visible {
 
 
 
-  /* WORK INTRO */
+  /* WORK */
+
+  .work-section {
+
+    padding-top: 90px;
+
+    padding-bottom: 90px;
+
+  }
+
 
   .work-intro {
 
     display: block;
 
 
-    margin-bottom: 70px;
+    margin-bottom: 55px;
 
   }
 
 
   .work-intro .eyebrow {
 
-    margin-bottom: 36px;
+    margin-bottom: 30px;
 
   }
 
@@ -1992,7 +2029,7 @@ button:focus-visible {
 
   .work-piece {
 
-    margin-bottom: 80px;
+    margin-bottom: 55px;
 
   }
 
@@ -2037,7 +2074,7 @@ button:focus-visible {
 
   .work-bottom {
 
-    margin-top: 80px;
+    margin-top: 65px;
 
   }
 
