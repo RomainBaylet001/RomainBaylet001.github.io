@@ -1,5 +1,6 @@
 /* =========================================================
    ROMAIN BAYLET — MAIN WEBSITE STYLES
+   DARK EDITION
    ========================================================= */
 
 
@@ -9,10 +10,10 @@
 
 :root {
 
-  --background: #f6f5f1;
-  --text: #111111;
-  --muted: #77736d;
-  --line: rgba(17, 17, 17, 0.12);
+  --background: #0b0b0b;
+  --text: #f5f3ee;
+  --muted: rgba(245, 243, 238, 0.58);
+  --line: rgba(245, 243, 238, 0.14);
 
   --dark: #0b0b0b;
   --dark-text: #f5f3ee;
@@ -398,26 +399,26 @@ button:focus-visible {
 
 
 .button-white {
-  background: white;
+  background: #f5f3ee;
 
   color: #111111;
 }
 
 
 .button-white:hover {
-  background: #eeece7;
+  background: #ffffff;
 }
 
 
 .button-black {
-  background: #111111;
+  background: #f5f3ee;
 
-  color: white;
+  color: #111111;
 }
 
 
 .button-black:hover {
-  background: #2a2a2a;
+  background: #ffffff;
 }
 
 
@@ -464,7 +465,8 @@ button:focus-visible {
 .work-section {
   overflow: hidden;
 
-  background: var(--background);
+  background: var(--dark);
+  color: var(--dark-text);
 
   padding-top: 135px;
   padding-bottom: 130px;
@@ -548,7 +550,7 @@ button:focus-visible {
 .work-card {
   position: absolute;
 
-  background: var(--background);
+  background: var(--dark);
 
   transition:
     transform
@@ -581,7 +583,7 @@ button:focus-visible {
     0
     28px
     70px
-    rgba(0, 0, 0, 0.13);
+    rgba(0, 0, 0, 0.45);
 }
 
 
@@ -712,6 +714,8 @@ button:focus-visible {
 
 .work-caption h3 {
   margin: 0;
+
+  color: var(--dark-text);
 
   font-size: 13px;
   font-weight: 500;
@@ -984,8 +988,8 @@ button:focus-visible {
     solid
     var(--line);
 
-  background:
-    #ece9e2;
+  background: var(--dark);
+  color: var(--dark-text);
 }
 
 
@@ -1048,7 +1052,10 @@ button:focus-visible {
    ========================================================= */
 
 .about-section {
-  background: var(--background);
+  min-height: calc(100vh - 80px);
+
+  background: var(--dark);
+  color: var(--dark-text);
 }
 
 
@@ -1145,7 +1152,8 @@ button:focus-visible {
     solid
     var(--line);
 
-  background: var(--background);
+  background: var(--dark);
+  color: var(--dark-text);
 
   font-size: 11px;
 }
@@ -1247,9 +1255,6 @@ button:focus-visible {
   }
 
 
-
-  /* HEADER */
-
   .site-header {
     height: 68px;
 
@@ -1268,9 +1273,6 @@ button:focus-visible {
     display: block;
   }
 
-
-
-  /* MOBILE MENU */
 
   .mobile-menu {
     position: fixed;
@@ -1294,7 +1296,7 @@ button:focus-visible {
     overflow-y: auto;
 
     background:
-      rgba(10, 10, 10, 0.98);
+      rgba(10, 10, 10, 0.99);
 
     color: white;
 
@@ -1318,9 +1320,6 @@ button:focus-visible {
       rgba(255, 255, 255, 0.12);
   }
 
-
-
-  /* HERO */
 
   .hero-content {
     width:
@@ -1362,18 +1361,12 @@ button:focus-visible {
   }
 
 
-
-  /* GENERAL */
-
   .section {
     padding:
       95px
       var(--side-padding);
   }
 
-
-
-  /* WORK */
 
   .work-section {
     padding-top: 90px;
@@ -1407,9 +1400,6 @@ button:focus-visible {
     font-size: 13px;
   }
 
-
-
-  /* MOBILE PORTFOLIO */
 
   .work-collage {
     position: static;
@@ -1473,9 +1463,6 @@ button:focus-visible {
   }
 
 
-
-  /* FINE ART */
-
   .section-intro {
     display: block;
 
@@ -1518,9 +1505,6 @@ button:focus-visible {
   }
 
 
-
-  /* CONTACT */
-
   .contact-section h2 {
     font-size:
       clamp(
@@ -1535,9 +1519,6 @@ button:focus-visible {
     width: 100%;
   }
 
-
-
-  /* ABOUT */
 
   .about-grid {
     grid-template-columns: 1fr;
@@ -1560,9 +1541,6 @@ button:focus-visible {
     font-size: 15px;
   }
 
-
-
-  /* FOOTER */
 
   .footer {
     padding:
