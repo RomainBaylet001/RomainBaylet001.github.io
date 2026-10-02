@@ -1,1068 +1,729 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Home — Romain Baylet</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
-    content="Fine art and travel photography by Romain Baylet."
+    content="Romain Baylet — Commercial, product and fine art photographer."
   >
 
-  <link rel="icon" href="favicon.png">
+  <title>Romain Baylet — Photographer</title>
 
-  <style>
-    :root {
-      --background: #f6f4ef;
-      --text: #252522;
-      --muted: #706e68;
-      --line: #d8d5ce;
-    }
 
-    * {
-      box-sizing: border-box;
-    }
+  <!-- GOOGLE FONT -->
 
-    [hidden] {
-      display: none !important;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-    body.viewer-open {
-      overflow: hidden;
-    }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
 
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
+  <!-- WEBSITE CSS -->
 
-    button,
-    a,
-    input,
-    textarea {
-      -webkit-tap-highlight-color: transparent;
-    }
+  <link rel="stylesheet" href="styles.css">
 
-    button {
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    figure {
-      margin: 0;
-    }
-
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 5px;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .skip-link {
-      position: fixed;
-      top: 12px;
-      left: 12px;
-      padding: 12px;
-      background: var(--background);
-      transform: translateY(-200%);
-      z-index: 20;
-    }
-
-    .skip-link:focus {
-      transform: translateY(0);
-    }
-
-    /* OVERALL LAYOUT */
-
-    .site {
-      width: min(1160px, calc(100% - 96px));
-      margin: clamp(60px, 12vh, 140px) auto 60px;
-      display: grid;
-      grid-template-columns: 180px minmax(0, 1fr);
-      gap: clamp(36px, 6vw, 90px);
-      align-items: start;
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 60px;
-    }
-
-    .brand {
-      display: inline-block;
-      font-size: 27px;
-      font-weight: 600;
-      line-height: 1.08;
-      letter-spacing: -1.1px;
-    }
-
-    .navigation {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2px;
-      margin-top: 48px;
-    }
-
-    .navigation a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 7px 0;
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--muted);
-    }
-
-    .navigation a:hover,
-    .navigation a[aria-current="page"] {
-      color: var(--text);
-    }
-
-    .navigation a[aria-current="page"] {
-      font-weight: 600;
-    }
-
-    main,
-    .view {
-      min-width: 0;
-    }
-
-    .view:focus {
-      outline: none;
-    }
-
-    /* HOME AND PORTFOLIO IMAGES */
-
-    .image-stage {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 66vh;
-      height: 66svh;
-      min-height: 300px;
-      max-height: 760px;
-    }
-
-    .image-stage img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .photo-button {
-      display: block;
-      width: 100%;
-      height: 100%;
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-      cursor: zoom-in;
-      touch-action: pan-y pinch-zoom;
-    }
-
-    .photo-button img {
-      -webkit-user-drag: none;
-      user-select: none;
-    }
-
-    .portfolio-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      column-gap: 24px;
-      row-gap: 6px;
-      margin-top: 15px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    .photo-title {
-      margin: 0;
-    }
-
-    .gallery-controls {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .text-button {
-      min-height: 44px;
-      padding: 8px 4px;
-      border: 0;
-      background: transparent;
-      font-size: 11px;
-      cursor: pointer;
-    }
-
-    .text-button:hover {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-
-    .counter {
-      min-width: 40px;
-      text-align: center;
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* TEXT PAGES */
-
-    .text-page {
-      max-width: 620px;
-      padding-top: 5px;
-    }
-
-    .page-title {
-      margin: 0 0 32px;
-      font-size: 19px;
-      line-height: 1.4;
-      font-weight: 500;
-      letter-spacing: -.3px;
-    }
-
-    .body-copy {
-      font-size: 14px;
-      line-height: 1.9;
-      color: var(--muted);
-    }
-
-    .body-copy p {
-      margin: 0 0 20px;
-    }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-      gap: 36px;
-      align-items: start;
-    }
-
-    .portrait {
-      width: 100%;
-      height: auto;
-      -webkit-mask-image: radial-gradient(
-        ellipse closest-side,
-        black 72%,
-        transparent 115%
-      );
-      mask-image: radial-gradient(
-        ellipse closest-side,
-        black 72%,
-        transparent 115%
-      );
-    }
-
-    .about-copy .page-title {
-      margin-bottom: 22px;
-    }
-
-    .coming-soon {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* CONTACT */
-
-    .email-link {
-      display: inline-block;
-      margin: 6px 0 32px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid var(--line);
-      font-size: 14px;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-form {
-      max-width: 460px;
-    }
-
-    .field {
-      margin-bottom: 24px;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 9px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .field input,
-    .field textarea {
-      display: block;
-      width: 100%;
-      padding: 10px 0;
-      border: 0;
-      border-bottom: 1px solid var(--line);
-      border-radius: 0;
-      background: transparent;
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .field textarea {
-      min-height: 115px;
-      resize: vertical;
-    }
-
-    .send-button {
-      padding: 12px 0;
-      border: 0;
-      border-bottom: 1px solid var(--text);
-      background: transparent;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .send-button:disabled {
-      opacity: .5;
-      cursor: wait;
-    }
-
-    .form-status {
-      min-height: 24px;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    /* FULL-SCREEN VIEWER */
-
-    .viewer {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      max-width: none;
-      max-height: none;
-      margin: 0;
-      padding: 65px 30px 24px;
-      border: 0;
-      background: var(--background);
-      color: var(--text);
-      overflow: auto;
-    }
-
-    .viewer:not([open]) {
-      display: none;
-    }
-
-    .viewer::backdrop {
-      background: var(--background);
-    }
-
-    .viewer-close {
-      position: fixed;
-      top: 15px;
-      right: 24px;
-      min-width: 64px;
-      min-height: 44px;
-      border: 0;
-      background: var(--background);
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .large-image {
-      width: 100%;
-      height: calc(100vh - 155px);
-      height: calc(100dvh - 155px);
-      object-fit: contain;
-      touch-action: pan-y pinch-zoom;
-    }
-
-    .viewer-footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 12px;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    /* TABLET */
-
-    @media (max-width: 1000px) {
-      .site {
-        width: calc(100% - 60px);
-        grid-template-columns: 150px minmax(0, 1fr);
-        gap: 36px;
-        margin-top: 70px;
-      }
-
-      .brand {
-        font-size: 25px;
-      }
-
-      .about-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .portrait {
-        max-width: 290px;
-      }
-    }
-
-    /* PHONE AND NARROW WINDOWS */
-
-    @media (max-width: 680px) {
-      .site {
-        display: block;
-        width: calc(100% - 40px);
-        margin: 32px auto 40px;
-      }
-
-      .sidebar {
-        position: static;
-        margin-bottom: 35px;
-      }
-
-      .brand {
-        font-size: 25px;
-      }
-
-      .brand br {
-        display: none;
-      }
-
-      .navigation {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0 22px;
-        margin-top: 21px;
-      }
-
-      .navigation a {
-        min-height: 44px;
-        font-size: 12px;
-      }
-
-      .image-stage {
-        height: 58vh;
-        height: 58svh;
-        min-height: 240px;
-      }
-
-      .portfolio-footer {
-        column-gap: 12px;
-      }
-
-      .gallery-controls {
-        gap: 8px;
-      }
-
-      .about-layout {
-        gap: 28px;
-      }
-
-      .portrait {
-        max-width: 300px;
-      }
-
-      .text-page {
-        padding-top: 0;
-      }
-
-      .viewer {
-        padding-inline: 14px;
-      }
-    }
-  </style>
 </head>
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="site">
-    <header class="sidebar">
-      <a class="brand" href="#home" aria-label="Romain Baylet — Home">
-        Romain<br> Baylet
+
+<body>
+
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+
+<header class="site-header">
+
+  <a
+    href="#home"
+    class="logo"
+  >
+    Romain Baylet
+  </a>
+
+
+  <nav class="desktop-nav">
+
+    <a href="#commercial">
+      Commercial
+    </a>
+
+    <a href="#fine-art">
+      Fine Art
+    </a>
+
+    <a href="#about">
+      About
+    </a>
+
+    <a
+      href="#contact"
+      class="nav-contact"
+    >
+      Start a Project
+    </a>
+
+  </nav>
+
+
+  <button
+    class="menu-button"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    Menu
+  </button>
+
+</header>
+
+
+
+<!-- ======================================================
+     MOBILE MENU
+====================================================== -->
+
+
+<div class="mobile-menu">
+
+  <a href="#commercial">
+    Commercial
+  </a>
+
+  <a href="#fine-art">
+    Fine Art
+  </a>
+
+  <a href="#about">
+    About
+  </a>
+
+  <a href="#contact">
+    Start a Project
+  </a>
+
+</div>
+
+
+
+<main>
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+
+<section
+  class="hero"
+  id="home"
+>
+
+  <div class="hero-image"></div>
+
+  <div class="hero-overlay"></div>
+
+
+  <div class="hero-content">
+
+    <p class="eyebrow hero-eyebrow">
+
+      Commercial · Product · Fine Art
+
+    </p>
+
+
+    <h1>
+
+      Photography built<br>
+      to make people look.
+
+    </h1>
+
+
+    <p class="hero-description">
+
+      Product, food and commercial photography
+      alongside personal fine art work.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+      <a
+        href="#commercial"
+        class="button button-white"
+      >
+
+        I need a photographer
+
       </a>
 
-      <nav class="navigation" aria-label="Main navigation">
-        <a href="#home" data-nav="home" aria-current="page">Home</a>
-        <a href="#portfolio" data-nav="portfolio">Portfolio</a>
-        <a href="#books" data-nav="books">Books</a>
-        <a href="#about" data-nav="about">About</a>
-        <a href="#contact" data-nav="contact">Contact</a>
-      </nav>
-    </header>
 
-    <main id="main" tabindex="-1">
-
-      <!-- HOME -->
-
-      <section
-        class="view"
-        data-view="home"
-        aria-label="Home"
-        tabindex="-1"
+      <a
+        href="#fine-art"
+        class="button button-transparent"
       >
-        <h1 class="sr-only">Photography by Romain Baylet</h1>
 
-        <div class="image-stage">
-          <img
-            src="images/taj-mahal-golden-hour.JPG.JPG"
-            alt="Golden-hour light on the Taj Mahal in Agra"
-            fetchpriority="high"
-          >
-        </div>
-      </section>
+        Explore fine art
 
-      <!-- PORTFOLIO -->
+      </a>
 
-      <section
-        class="view"
-        data-view="portfolio"
-        aria-label="Portfolio"
-        tabindex="-1"
-        hidden
-      >
-        <h1 class="sr-only">Portfolio</h1>
+    </div>
 
-        <figure>
-          <div class="image-stage">
-            <button
-              class="photo-button"
-              id="enlarge"
-              type="button"
-              aria-label="Enlarge photograph"
-              aria-haspopup="dialog"
-            >
-              <img
-                id="portfolioImage"
-                src="images/taj-mahal-golden-hour.JPG.JPG"
-                alt="Golden-hour light on the Taj Mahal in Agra"
-              >
-            </button>
-          </div>
-
-          <figcaption class="portfolio-footer">
-            <p class="photo-title" id="photoTitle">Agra, India</p>
-
-            <div class="gallery-controls">
-              <button class="text-button" id="previous" type="button">
-                Previous
-              </button>
-
-              <span
-                class="counter"
-                id="counter"
-                role="status"
-                aria-live="polite"
-                aria-atomic="true"
-              >1 / 7</span>
-
-              <button class="text-button" id="next" type="button">
-                Next
-              </button>
-            </div>
-          </figcaption>
-        </figure>
-      </section>
-
-      <!-- BOOKS -->
-
-      <section
-        class="view text-page"
-        data-view="books"
-        aria-labelledby="booksTitle"
-        tabindex="-1"
-        hidden
-      >
-        <h1 class="page-title" id="booksTitle">Books</h1>
-        <p class="coming-soon">Coming soon.</p>
-      </section>
-
-      <!-- ABOUT -->
-
-      <section
-        class="view"
-        data-view="about"
-        aria-labelledby="aboutTitle"
-        tabindex="-1"
-        hidden
-      >
-        <div class="about-layout">
-          <img
-            class="portrait"
-            src="images/Romain.JPG"
-            alt="Portrait of Romain Baylet"
-            loading="lazy"
-          >
-
-          <div class="about-copy">
-            <h1 class="page-title" id="aboutTitle">About</h1>
-
-            <div class="body-copy">
-
-              <p>
-                I'm Romain, a French photographer
-                based in Asia.
-              </p>
-
-              <p>
-                I used to spend a lot of time thinking
-                about the future. Photography became
-                my way of slowing down, being present,
-                and appreciating what's right in
-                front of me.
-              </p>
-
-              <p>
-                I'm drawn to unfamiliar places,
-                the beauty of everyday life, and
-                the small details that often go
-                unnoticed.
-              </p>
-
-              <p>
-                Through my photographs, I simply
-                want to share the world as I see it,
-                one moment at a time.
-              </p>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-
-      <section
-        class="view text-page"
-        data-view="contact"
-        aria-labelledby="contactTitle"
-        tabindex="-1"
-        hidden
-      >
-        <h1 class="page-title" id="contactTitle">Contact</h1>
-
-        <div class="body-copy">
-          <p>
-            For commissions and enquiries.
-            I read everything and reply personally.
-          </p>
-        </div>
-
-        <a class="email-link" href="mailto:romainbaylet@icloud.com">
-          romainbaylet@icloud.com
-        </a>
-
-        <form
-          class="contact-form"
-          id="contactForm"
-          action="https://formspree.io/f/xeejjjkz"
-          method="POST"
-        >
-          <div class="field">
-            <label for="name">Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              autocomplete="name"
-              required
-            >
-          </div>
-
-          <div class="field">
-            <label for="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              required
-            >
-          </div>
-
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-
-          <input
-            type="hidden"
-            name="_subject"
-            value="New enquiry — RomainBaylet.com"
-          >
-
-          <button class="send-button" id="send" type="submit">
-            Send message
-          </button>
-
-          <p
-            class="form-status"
-            id="formStatus"
-            role="status"
-            aria-live="polite"
-          ></p>
-        </form>
-      </section>
-
-      <noscript>
-        <p>
-          Please enable JavaScript to browse the portfolio,
-          or email
-          <a href="mailto:romainbaylet@icloud.com">
-            romainbaylet@icloud.com
-          </a>.
-        </p>
-      </noscript>
-    </main>
   </div>
 
-  <!-- ENLARGED PHOTOGRAPH -->
 
-  <dialog class="viewer" id="viewer" aria-label="Enlarged photograph">
-    <button
-      class="viewer-close"
-      id="closeViewer"
-      type="button"
-      autofocus
-    >
-      Close ×
-    </button>
+  <a
+    href="#commercial"
+    class="scroll-indicator"
+  >
 
-    <img class="large-image" id="largeImage" alt="">
+    Selected work ↓
 
-    <div class="viewer-footer">
-      <button class="text-button" id="largePrevious" type="button">
-        Previous
-      </button>
+  </a>
 
-      <span id="largeCaption" role="status" aria-live="polite"></span>
+</section>
 
-      <button class="text-button" id="largeNext" type="button">
-        Next
-      </button>
+
+
+<!-- ======================================================
+     COMMERCIAL INTRO
+====================================================== -->
+
+
+<section
+  class="section commercial-section"
+  id="commercial"
+>
+
+
+  <div class="section-intro">
+
+
+    <div>
+
+      <p class="eyebrow">
+
+        Commercial Photography
+
+      </p>
+
     </div>
-  </dialog>
 
-  <script>
-    /*
-      PORTFOLIO PHOTOGRAPHS
-      Add future photographs to this list.
-      Match every filename exactly, including capital letters.
-    */
 
-    const photos = [
-      {
-        src: "images/taj-mahal-golden-hour.JPG.JPG",
-        title: "Agra, India",
-        alt: "Golden-hour light on the Taj Mahal in Agra"
-      },
-      {
-        src: "images/Wooden_boat.JPG",
-        title: "Venice, Italy",
-        alt: "A wooden motorboat crossing the water in Venice"
-      },
-      {
-        src: "images/red.jpg.JPG",
-        title: "Agra, India",
-        alt: "Red sandstone corridor with repeating doorways"
-      },
-      {
-        src: "images/Taj2.JPG",
-        title: "Taj Mahal, Agra",
-        alt: "Taj Mahal — second photograph"
-      },
-      {
-        src: "images/Humayun1.JPG",
-        title: "Humayun’s Tomb, Delhi",
-        alt: "Humayun’s Tomb — photograph one"
-      },
-      {
-        src: "images/Humayun2.JPG",
-        title: "Humayun’s Tomb, Delhi",
-        alt: "Humayun’s Tomb — photograph two"
-      },
-      {
-        src: "images/Humayun3.JPG",
-        title: "Humayun’s Tomb, Delhi",
-        alt: "Humayun’s Tomb — photograph three"
-      }
-    ];
+    <div>
 
-    const byId = id => document.getElementById(id);
-    const views = [...document.querySelectorAll("[data-view]")];
-    const navLinks = [...document.querySelectorAll("[data-nav]")];
-    const dialog = byId("viewer");
-    const image = byId("portfolioImage");
+      <h2>
 
-    let current = 0;
-    let activeView = "home";
-    let swipeUntil = 0;
+        Images that give a product
+        a reason to be remembered.
 
-    /* CHANGE PHOTOGRAPH */
+      </h2>
 
-    function updatePhoto() {
-      const photo = photos[current];
 
-      image.src = photo.src;
-      image.alt = photo.alt;
+      <p class="section-description">
 
-      byId("photoTitle").textContent = photo.title;
+        Product, beauty, food, beverage and campaign
+        photography for brands, restaurants and creative teams.
 
-      byId("counter").textContent =
-        (current + 1) + " / " + photos.length;
+      </p>
 
-      byId("enlarge").setAttribute(
-        "aria-label",
-        "Enlarge photograph: " + photo.title
-      );
+    </div>
 
-      if (dialog.open) {
-        byId("largeImage").src = photo.src;
-        byId("largeImage").alt = photo.alt;
 
-        byId("largeCaption").textContent =
-          photo.title + " — " +
-          (current + 1) + " / " + photos.length;
-      }
-    }
+  </div>
 
-    function step(amount) {
-      current = (current + amount + photos.length) % photos.length;
-      updatePhoto();
-    }
 
-    /* NAVIGATION */
 
-    function route(moveFocus = false) {
-      const requested = location.hash.slice(1) || "home";
+<!-- ======================================================
+     COMMERCIAL PROJECTS
+====================================================== -->
 
-      activeView = views.some(
-        view => view.dataset.view === requested
-      ) ? requested : "home";
 
-      if (dialog.open) {
-        dialog.close();
-      }
+  <div class="commercial-grid">
 
-      views.forEach(view => {
-        view.hidden = view.dataset.view !== activeView;
-      });
 
-      navLinks.forEach(link => {
-        if (link.dataset.nav === activeView) {
-          link.setAttribute("aria-current", "page");
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      });
 
-      const label =
-        activeView.charAt(0).toUpperCase() + activeView.slice(1);
+    <!-- PROJECT 01 -->
 
-      document.title = label + " — Romain Baylet";
 
-      if (moveFocus) {
-        document.querySelector(
-          '[data-view="' + activeView + '"]'
-        ).focus({ preventScroll: true });
+    <article class="project project-large">
 
-        window.scrollTo(0, 0);
-      }
-    }
 
-    window.addEventListener("hashchange", () => route(true));
+      <a href="#contact">
 
-    document.querySelector(".skip-link").addEventListener(
-      "click",
-      event => {
-        event.preventDefault();
-        byId("main").focus();
-      }
-    );
 
-    byId("previous").addEventListener("click", () => step(-1));
-    byId("next").addEventListener("click", () => step(1));
+        <div class="project-image product-image">
 
-    /* FULL-SCREEN VIEWER */
+          <span class="image-placeholder">
 
-    byId("enlarge").addEventListener("click", () => {
-      if (Date.now() < swipeUntil) return;
+            PRODUCT / BEAUTY
 
-      dialog.showModal();
-      document.body.classList.add("viewer-open");
-      updatePhoto();
-    });
+          </span>
 
-    byId("closeViewer").addEventListener("click", () => {
-      dialog.close();
-    });
+        </div>
 
-    byId("largePrevious").addEventListener("click", () => step(-1));
-    byId("largeNext").addEventListener("click", () => step(1));
 
-    dialog.addEventListener("close", () => {
-      document.body.classList.remove("viewer-open");
-    });
+        <div class="project-information">
 
-    dialog.addEventListener("click", event => {
-      if (event.target === dialog) {
-        dialog.close();
-      }
-    });
 
-    /* KEYBOARD ARROWS */
+          <h3>
 
-    document.addEventListener("keydown", event => {
-      if (
-        activeView !== "portfolio" ||
-        event.altKey ||
-        event.ctrlKey ||
-        event.metaKey
-      ) return;
+            Product & Beauty
 
-      if (
-        event.target.closest(
-          "input, textarea, select, [contenteditable]"
-        )
-      ) return;
+          </h3>
 
-      if (
-        event.key === "ArrowLeft" ||
-        event.key === "ArrowRight"
-      ) {
-        event.preventDefault();
-        step(event.key === "ArrowLeft" ? -1 : 1);
-      }
-    });
 
-    /* TOUCH SWIPING */
+          <p>
 
-    function enableSwipe(element) {
-      let start = null;
+            Still Life · Texture · Detail
 
-      element.addEventListener("touchstart", event => {
-        start = event.touches.length === 1
-          ? {
-              x: event.touches[0].clientX,
-              y: event.touches[0].clientY
-            }
-          : null;
-      }, { passive: true });
+          </p>
 
-      element.addEventListener("touchmove", event => {
-        if (event.touches.length !== 1) {
-          start = null;
-        }
-      }, { passive: true });
 
-      element.addEventListener("touchcancel", () => {
-        start = null;
-      }, { passive: true });
+        </div>
 
-      element.addEventListener("touchend", event => {
-        if (!start || !event.changedTouches.length) return;
 
-        const dx = event.changedTouches[0].clientX - start.x;
-        const dy = event.changedTouches[0].clientY - start.y;
+      </a>
 
-        start = null;
 
-        if (
-          Math.abs(dx) > 60 &&
-          Math.abs(dx) > Math.abs(dy) * 1.5
-        ) {
-          swipeUntil = Date.now() + 450;
-          step(dx < 0 ? 1 : -1);
-        }
-      }, { passive: true });
-    }
+    </article>
 
-    enableSwipe(byId("enlarge"));
-    enableSwipe(byId("largeImage"));
 
-    /* CONTACT FORM */
 
-    const form = byId("contactForm");
+    <!-- PROJECT 02 -->
 
-    form.addEventListener("submit", async event => {
-      event.preventDefault();
 
-      const button = byId("send");
-      const status = byId("formStatus");
+    <article class="project">
 
-      button.disabled = true;
-      status.textContent = "Sending…";
 
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: {
-            Accept: "application/json"
-          }
-        });
+      <a href="#contact">
 
-        if (!response.ok) {
-          throw new Error("Submission failed");
-        }
 
-        form.reset();
+        <div class="project-image beverage-image">
 
-        status.textContent =
-          "Thank you. Your message has been sent.";
-      } catch {
-        status.textContent =
-          "Your message could not be confirmed as sent. " +
-          "Please try again or use the email link.";
-      } finally {
-        button.disabled = false;
-      }
-    });
+          <span class="image-placeholder">
 
-    updatePhoto();
-    route();
-  </script>
+            FOOD / BEVERAGE
+
+          </span>
+
+        </div>
+
+
+        <div class="project-information">
+
+
+          <h3>
+
+            Food & Beverage
+
+          </h3>
+
+
+          <p>
+
+            Editorial · Menu · Campaign
+
+          </p>
+
+
+        </div>
+
+
+      </a>
+
+
+    </article>
+
+
+
+    <!-- PROJECT 03 -->
+
+
+    <article class="project">
+
+
+      <a href="#contact">
+
+
+        <div class="project-image fashion-image">
+
+          <span class="image-placeholder">
+
+            OBJECTS / FASHION
+
+          </span>
+
+        </div>
+
+
+        <div class="project-information">
+
+
+          <h3>
+
+            Objects & Fashion
+
+          </h3>
+
+
+          <p>
+
+            Material · Shape · Motion
+
+          </p>
+
+
+        </div>
+
+
+      </a>
+
+
+    </article>
+
+
+  </div>
+
+
+
+  <div class="commercial-link-wrapper">
+
+
+    <a
+      href="#contact"
+      class="underlined-link"
+    >
+
+      Start a commercial project ↗
+
+    </a>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     FINE ART
+====================================================== -->
+
+
+<section
+  class="section fine-art-section"
+  id="fine-art"
+>
+
+
+  <div class="section-intro">
+
+
+    <div>
+
+      <p class="eyebrow">
+
+        Fine Art
+
+      </p>
+
+    </div>
+
+
+    <div>
+
+
+      <h2>
+
+        Places, people and
+        the moments that remain.
+
+      </h2>
+
+
+      <p class="section-description">
+
+        Street photography, travel, photographic series,
+        books and selected prints.
+
+      </p>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <div class="fine-art-grid">
+
+
+    <a
+      href="#"
+      class="fine-art-item fine-art-one"
+    >
+
+      <span>
+
+        India
+
+      </span>
+
+    </a>
+
+
+    <a
+      href="#"
+      class="fine-art-item fine-art-two"
+    >
+
+      <span>
+
+        People
+
+      </span>
+
+    </a>
+
+
+    <a
+      href="#"
+      class="fine-art-item fine-art-three"
+    >
+
+      <span>
+
+        Travel
+
+      </span>
+
+    </a>
+
+
+  </div>
+
+
+  <div class="fine-art-bottom">
+
+
+    <a
+      href="#"
+      class="underlined-link"
+    >
+
+      Explore fine art photography ↗
+
+    </a>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     ABOUT
+====================================================== -->
+
+
+<section
+  class="section about-section"
+  id="about"
+>
+
+
+  <p class="eyebrow">
+
+    About
+
+  </p>
+
+
+  <div class="about-grid">
+
+
+    <div>
+
+
+      <h2>
+
+        Clean light.<br>
+        Strong detail.<br>
+        Images with intention.
+
+      </h2>
+
+
+    </div>
+
+
+    <div class="about-text">
+
+
+      <p>
+
+        I'm Romain Baylet, a photographer working across
+        commercial, product and personal documentary photography.
+
+      </p>
+
+
+      <p>
+
+        My commercial work focuses on texture, form,
+        atmosphere and visual clarity — creating images that
+        make products feel tangible, desirable and memorable.
+
+      </p>
+
+
+      <p>
+
+        Alongside commercial photography, I continue to
+        document people, places and everyday life through
+        street and travel photography.
+
+      </p>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     CONTACT
+====================================================== -->
+
+
+<section
+  class="section contact-section"
+  id="contact"
+>
+
+
+  <p class="eyebrow">
+
+    Start a Project
+
+  </p>
+
+
+  <h2>
+
+    Have something<br>
+    you want photographed?
+
+  </h2>
+
+
+  <p class="contact-description">
+
+    Tell me about your product, your idea,
+    what you need and when you need it.
+
+  </p>
+
+
+  <a
+    href="mailto:hello@romainbaylet.com"
+    class="button button-black"
+  >
+
+    Get in touch ↗
+
+  </a>
+
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+
+<footer class="footer">
+
+
+  <div>
+
+    © <span id="current-year"></span> Romain Baylet
+
+  </div>
+
+
+  <div class="footer-links">
+
+
+    <a
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      Instagram
+
+    </a>
+
+
+    <a href="#home">
+
+      Back to top ↑
+
+    </a>
+
+
+  </div>
+
+
+</footer>
+
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
