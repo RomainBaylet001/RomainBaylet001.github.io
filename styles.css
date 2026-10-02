@@ -225,23 +225,13 @@ h3 {
 
   inset: 0;
 
-  background-image:
-    radial-gradient(
-      circle at 70% 25%,
-      rgba(255, 255, 255, 0.14),
-      transparent 25%
-    ),
-    linear-gradient(
-      135deg,
-      #3a4540 0%,
-      #232826 35%,
-      #181818 65%,
-      #302821 100%
-    );
+  background-image: url("./assets/images/hero.jpg");
 
   background-size: cover;
 
   background-position: center;
+
+  background-repeat: no-repeat;
 
   transform: scale(1.02);
 
