@@ -135,7 +135,7 @@ button:focus-visible {
 
 
 .logo {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 
   letter-spacing: -0.02em;
@@ -143,7 +143,7 @@ button:focus-visible {
 
 
 .brand-fine-art {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
 
   opacity: 0.58;
@@ -163,11 +163,11 @@ button:focus-visible {
   display: flex;
   align-items: center;
 
-  gap: 32px;
+  gap: 36px;
 
   padding-top: 2px;
 
-  font-size: 13px;
+  font-size: 15px;
 }
 
 
@@ -211,7 +211,7 @@ button:focus-visible {
 
   color: inherit;
 
-  font-size: 13px;
+  font-size: 15px;
 
   cursor: pointer;
 }
@@ -694,10 +694,12 @@ button:focus-visible {
 
 
 /* =========================================================
-   PROJECT INVITATION
+   PROJECT / CONTACT
    ========================================================= */
 
 .project-section {
+  min-height: calc(100vh - 78px);
+
   border-top:
     1px
     solid
@@ -742,6 +744,7 @@ button:focus-visible {
 }
 
 
+.project-content h1,
 .project-content h2 {
   margin: 0;
 
@@ -1169,7 +1172,7 @@ button:focus-visible {
 
 
   .brand-fine-art {
-    font-size: 10px;
+    font-size: 11px;
   }
 
 
@@ -1199,7 +1202,7 @@ button:focus-visible {
 
     color: white;
 
-    font-size: 28px;
+    font-size: 30px;
 
     line-height: 1.1;
   }
@@ -1345,6 +1348,7 @@ button:focus-visible {
   }
 
 
+  .project-content h1,
   .project-content h2 {
     font-size:
       clamp(
