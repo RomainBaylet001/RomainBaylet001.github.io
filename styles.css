@@ -69,6 +69,12 @@ button {
 }
 
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
 h1,
 h2,
 h3,
@@ -592,11 +598,6 @@ button:focus-visible {
 }
 
 
-
-/* =========================================================
-   FOOD / BEVERAGE — REAL IMAGE
-   ========================================================= */
-
 .work-image-one {
   aspect-ratio:
     3 / 2;
@@ -605,17 +606,10 @@ button:focus-visible {
     url("./assets/images/food-beverage.JPG");
 
   background-size: cover;
-
   background-position: center;
-
   background-repeat: no-repeat;
 }
 
-
-
-/* =========================================================
-   PRODUCT / STILL LIFE — PLACEHOLDER
-   ========================================================= */
 
 .work-image-two {
   aspect-ratio:
@@ -634,11 +628,6 @@ button:focus-visible {
     );
 }
 
-
-
-/* =========================================================
-   OBJECTS / CAMPAIGN — PLACEHOLDER
-   ========================================================= */
 
 .work-image-three {
   aspect-ratio:
@@ -701,7 +690,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   PROJECT / CONTACT
+   CONTACT
    ========================================================= */
 
 .project-section {
@@ -798,29 +787,18 @@ button:focus-visible {
 
 
 /* =========================================================
-   ABOUT
+   ABOUT PAGE
    ========================================================= */
 
 .about-section {
   min-height: calc(100vh - 78px);
 
-  padding-top: 150px;
+  padding-top: 145px;
+  padding-bottom: 110px;
 }
 
 
-.about-section > .eyebrow {
-  width:
-    min(
-      var(--max-width),
-      100%
-    );
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.about-grid {
+.about-page {
   width:
     min(
       var(--max-width),
@@ -834,35 +812,82 @@ button:focus-visible {
   display: grid;
 
   grid-template-columns:
-    1.25fr
-    0.75fr;
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
 
-  gap: 110px;
+  gap:
+    clamp(
+      70px,
+      9vw,
+      150px
+    );
 
-  align-items: start;
+  align-items: center;
 }
 
 
-.about-grid h1 {
-  margin: 0;
+
+/* =========================================================
+   ABOUT PORTRAIT
+   ========================================================= */
+
+.about-portrait {
+  width: 100%;
+
+  max-width: 620px;
+
+  justify-self: start;
+}
+
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+
+/* =========================================================
+   ABOUT CONTENT
+   ========================================================= */
+
+.about-content {
+  width: 100%;
+
+  max-width: 680px;
+}
+
+
+.about-content .eyebrow {
+  margin-bottom: 34px;
+}
+
+
+.about-content h1 {
+  margin:
+    0
+    0
+    58px;
 
   font-size:
     clamp(
-      46px,
-      5.5vw,
-      86px
+      54px,
+      6vw,
+      94px
     );
 
   font-weight: 500;
 
-  line-height: 0.98;
+  line-height: 0.94;
 
-  letter-spacing: -0.05em;
+  letter-spacing: -0.055em;
 }
 
 
 .about-text {
-  padding-top: 8px;
+  max-width: 560px;
 }
 
 
@@ -1144,6 +1169,20 @@ button:focus-visible {
     width: 48%;
   }
 
+
+  .about-page {
+    grid-template-columns:
+      0.9fr
+      1.1fr;
+
+    gap: 60px;
+  }
+
+
+  .about-content h1 {
+    margin-bottom: 42px;
+  }
+
 }
 
 
@@ -1376,20 +1415,47 @@ button:focus-visible {
   }
 
 
-  .about-grid {
-    grid-template-columns: 1fr;
 
-    gap: 42px;
+  /* ABOUT MOBILE */
+
+  .about-section {
+    padding-top: 110px;
   }
 
 
-  .about-grid h1 {
+  .about-page {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 55px;
+  }
+
+
+  .about-portrait {
+    max-width: 100%;
+  }
+
+
+  .about-content {
+    max-width: 100%;
+  }
+
+
+  .about-content h1 {
+    margin-bottom: 38px;
+
     font-size:
       clamp(
         46px,
         12vw,
         70px
       );
+  }
+
+
+  .about-text {
+    max-width: 100%;
   }
 
 
