@@ -722,7 +722,7 @@ button:focus-visible {
   }
 
 
-  /* MOBILE HERO IMAGE — CENTERED AGAIN */
+  /* HERO IMAGE — CENTERED */
 
   .hero-image {
     background-position: center center;
@@ -820,15 +820,15 @@ button:focus-visible {
 
   .hero-content {
     width: auto;
-    margin: 0 var(--side-padding) 38px;
+    margin: 0 var(--side-padding) 34px;
   }
 
   .hero h1 {
-    max-width: 320px;
-    margin-bottom: 20px;
-    font-size: clamp(26px, 6.8vw, 33px);
-    line-height: 1.01;
-    letter-spacing: -0.045em;
+    max-width: 285px;
+    margin-bottom: 17px;
+    font-size: clamp(24px, 6.8vw, 30px);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
   }
 
   .hero h1 br {
@@ -836,16 +836,16 @@ button:focus-visible {
   }
 
   .hero-description {
-    max-width: 310px;
-    margin-bottom: 25px;
-    font-size: 12px;
-    line-height: 1.6;
+    max-width: 285px;
+    margin-bottom: 22px;
+    font-size: 11px;
+    line-height: 1.65;
     color: rgba(255, 255, 255, 0.72);
   }
 
   .hero-eyebrow {
-    margin-bottom: 16px;
-    font-size: 10px;
+    margin-bottom: 13px;
+    font-size: 9px;
   }
 
   .hero-buttons {
@@ -854,9 +854,9 @@ button:focus-visible {
 
   .hero-buttons .button {
     width: auto;
-    min-height: 44px;
-    padding: 0 19px;
-    font-size: 12px;
+    min-height: 41px;
+    padding: 0 17px;
+    font-size: 11px;
   }
 
 
