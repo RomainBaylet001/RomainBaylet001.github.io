@@ -722,10 +722,10 @@ button:focus-visible {
   }
 
 
-  /* MOBILE HERO IMAGE */
+  /* MOBILE HERO IMAGE — CENTERED AGAIN */
 
   .hero-image {
-    background-position: 68% center;
+    background-position: center center;
   }
 
 
@@ -907,6 +907,10 @@ button:focus-visible {
 
   .work-card {
     position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
     display: flex;
     flex-direction: column;
     background: transparent;
@@ -920,16 +924,28 @@ button:focus-visible {
   }
 
   .work-card-one {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
     width: 100%;
     margin: 0;
   }
 
   .work-card-two {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
     width: 74%;
     margin: 108px 0 0 auto;
   }
 
   .work-card-three {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
     width: 88%;
     margin: 108px auto 0 0;
   }
