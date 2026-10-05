@@ -722,10 +722,18 @@ button:focus-visible {
   }
 
 
-  /* HERO IMAGE — CENTERED */
+  /* MOBILE HERO — ROBUST BACKGROUND */
+
+  .hero {
+    min-height: 100svh;
+    background-image: url("./assets/images/hero.JPG");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 
   .hero-image {
-    background-position: center center;
+    display: none;
   }
 
 
@@ -812,11 +820,7 @@ button:focus-visible {
   }
 
 
-  /* MOBILE HERO */
-
-  .hero {
-    min-height: 100svh;
-  }
+  /* MOBILE HERO CONTENT */
 
   .hero-content {
     width: auto;
