@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fine art, street and travel photography by Romain Baylet.">
-
+  <meta name="description" content="Fine art photography by Romain Baylet — places, people and moments from around the world.">
   <title>Fine Art — Romain Baylet</title>
 
   <link rel="icon" type="image/png" href="../favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=9">
+
+  <link rel="stylesheet" href="../styles.css?v=12">
 </head>
 
 <body>
@@ -31,9 +29,7 @@
     <a href="/contact/">Contact</a>
   </nav>
 
-  <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
-    Menu
-  </button>
+  <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
 </header>
 
 <div class="mobile-menu" aria-label="Mobile navigation">
@@ -47,37 +43,66 @@
 
 <section class="section fine-art-section">
 
-  <div class="section-intro">
-    <div>
-      <p class="eyebrow">Personal Work</p>
-    </div>
+  <div class="fine-art-intro">
+    <p class="eyebrow">Personal Work</p>
 
-    <div>
-      <h1>
-        Places, people and
-        the moments that remain.
-      </h1>
+    <h1>Places, people and the moments that remain.</h1>
 
-      <p class="section-description">
-        Photography made while travelling, walking and paying
-        attention, people, places and small moments worth keeping.
-      </p>
-    </div>
+    <p class="fine-art-description">
+      Photography made while travelling, walking and paying attention —
+      people, places and small moments worth keeping.
+    </p>
   </div>
 
-  <div class="fine-art-grid">
 
-    <a href="#" class="fine-art-item fine-art-one">
-      <span>India</span>
-    </a>
+  <div class="fine-art-gallery">
 
-    <a href="#" class="fine-art-item fine-art-two">
-      <span>People</span>
-    </a>
+    <!-- THE DOME -->
+    <article class="fine-art-piece">
 
-    <a href="#" class="fine-art-item fine-art-three">
-      <span>Travel</span>
-    </a>
+      <div class="fine-art-photo">
+        <img
+          src="../assets/images/fine-art-01.JPG"
+          alt="The Dome — architectural photograph from Agra, India"
+        >
+      </div>
+
+      <div class="fine-art-info">
+        <p class="fine-art-number">01</p>
+
+        <h2>The Dome</h2>
+
+        <p class="fine-art-location">
+          Agra, India<br>
+          2026
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- TAJ -->
+    <article class="fine-art-piece">
+
+      <div class="fine-art-photo">
+        <img
+          src="../assets/images/fine-art-02.JPG"
+          alt="Taj — architectural photograph from Agra, India"
+        >
+      </div>
+
+      <div class="fine-art-info">
+        <p class="fine-art-number">02</p>
+
+        <h2>Taj</h2>
+
+        <p class="fine-art-location">
+          Agra, India<br>
+          2026
+        </p>
+      </div>
+
+    </article>
 
   </div>
 
@@ -86,10 +111,10 @@
 </main>
 
 <footer class="footer">
-  <div>© <span id="current-year"></span> Romain Baylet</div>
+  <span>© <span id="current-year"></span> Romain Baylet</span>
 
   <div class="footer-links">
-    <a href="/work/">Work</a>
+    <a href="/">Home</a>
     <a href="/contact/">Contact</a>
   </div>
 </footer>
