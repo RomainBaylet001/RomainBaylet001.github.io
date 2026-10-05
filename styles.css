@@ -713,7 +713,6 @@ button:focus-visible {
 
 /* =========================================================
    MOBILE — EDITORIAL VERSION
-   Only screens 820px and smaller are affected below.
    ========================================================= */
 
 @media (max-width: 820px) {
@@ -723,9 +722,14 @@ button:focus-visible {
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE HEADER
-     ------------------------------------------------------- */
+  /* MOBILE HERO IMAGE POSITION */
+
+  .hero-image {
+    background-position: 68% center;
+  }
+
+
+  /* MOBILE HEADER */
 
   .site-header {
     min-height: 74px;
@@ -756,31 +760,20 @@ button:focus-visible {
   }
 
 
-  /* -------------------------------------------------------
-     FULL-SCREEN MOBILE MENU
-     ------------------------------------------------------- */
+  /* FULL-SCREEN MOBILE MENU */
 
   .mobile-menu {
     position: fixed;
     inset: 0;
     z-index: 999;
-
     min-height: 100vh;
     min-height: 100svh;
-
-    padding:
-      120px
-      var(--side-padding)
-      38px;
-
+    padding: 120px var(--side-padding) 38px;
     flex-direction: column;
     gap: 0;
-
     overflow-y: auto;
-
     background: #0b0b0b;
     color: var(--text);
-
     font-family: "Manrope", Arial, sans-serif;
     font-size: clamp(48px, 14vw, 68px);
     font-weight: 500;
@@ -804,17 +797,13 @@ button:focus-visible {
   .mobile-menu a:last-child {
     margin-top: auto;
     padding: 30px 0 0;
-
     border-bottom: 0;
-
     font-family: "Inter", Arial, sans-serif;
     font-size: 11px;
     font-weight: 500;
     line-height: 1;
-
     letter-spacing: 0.14em;
     text-transform: uppercase;
-
     opacity: 0.58;
   }
 
@@ -823,9 +812,7 @@ button:focus-visible {
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE HERO
-     ------------------------------------------------------- */
+  /* MOBILE HERO */
 
   .hero {
     min-height: 100svh;
@@ -833,16 +820,12 @@ button:focus-visible {
 
   .hero-content {
     width: auto;
-    margin:
-      0
-      var(--side-padding)
-      38px;
+    margin: 0 var(--side-padding) 38px;
   }
 
   .hero h1 {
     max-width: 370px;
     margin-bottom: 22px;
-
     font-size: clamp(38px, 10.5vw, 50px);
     line-height: 0.97;
     letter-spacing: -0.052em;
@@ -855,10 +838,8 @@ button:focus-visible {
   .hero-description {
     max-width: 335px;
     margin-bottom: 27px;
-
     font-size: 13px;
     line-height: 1.6;
-
     color: rgba(255, 255, 255, 0.72);
   }
 
@@ -877,20 +858,14 @@ button:focus-visible {
   }
 
 
-  /* -------------------------------------------------------
-     GENERAL MOBILE SECTIONS
-     ------------------------------------------------------- */
+  /* GENERAL MOBILE SECTIONS */
 
   .section {
-    padding:
-      100px
-      var(--side-padding);
+    padding: 100px var(--side-padding);
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE WORK — EDITORIAL / ASYMMETRIC
-     ------------------------------------------------------- */
+  /* MOBILE WORK */
 
   .work-section {
     padding-top: 115px;
@@ -899,11 +874,7 @@ button:focus-visible {
 
   .work-intro {
     width: 100%;
-    margin:
-      0
-      0
-      82px;
-
+    margin: 0 0 82px;
     text-align: left;
   }
 
@@ -914,7 +885,6 @@ button:focus-visible {
   .work-intro h1 {
     max-width: 340px;
     margin-bottom: 20px;
-
     font-size: clamp(52px, 15vw, 68px);
     line-height: 0.92;
     letter-spacing: -0.06em;
@@ -922,109 +892,64 @@ button:focus-visible {
 
   .work-categories {
     max-width: 280px;
-
     font-size: 12px;
     line-height: 1.65;
   }
 
   .work-collage {
     position: static;
-
     width: 100%;
     height: auto;
-
     margin: 0;
   }
 
   .work-card {
     position: relative;
-
     display: flex;
     flex-direction: column;
-
     background: transparent;
-
     transform: none;
   }
 
   .work-card:hover {
     z-index: auto;
-
     transform: none;
-
     box-shadow: none;
   }
 
-
-  /* Main Food / Beverage photograph */
-
   .work-card-one {
     width: 100%;
-
     margin: 0;
   }
 
-
-  /* Portrait Product / Still Life */
-
   .work-card-two {
     width: 74%;
-
-    margin:
-      108px
-      0
-      0
-      auto;
+    margin: 108px 0 0 auto;
   }
-
-
-  /* Wider Objects / Campaign */
 
   .work-card-three {
     width: 88%;
-
-    margin:
-      108px
-      auto
-      0
-      0;
+    margin: 108px auto 0 0;
   }
-
-
-  /* Captions now sit ABOVE images */
 
   .work-caption {
     order: -1;
-
     min-height: 0;
-
-    padding:
-      0
-      0
-      12px;
+    padding: 0 0 12px;
   }
 
   .work-card-two .work-caption {
     position: static;
-
-    padding:
-      0
-      0
-      12px;
+    padding: 0 0 12px;
   }
 
   .work-caption h2 {
     font-size: 10px;
     font-weight: 500;
-
     letter-spacing: 0.12em;
     text-transform: uppercase;
-
     color: rgba(245, 243, 238, 0.68);
   }
-
-
-  /* Keep every photograph in its intended shape */
 
   .work-image-one {
     aspect-ratio: 3 / 2;
@@ -1039,30 +964,22 @@ button:focus-visible {
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE ABOUT — PORTRAIT FIRST
-     ------------------------------------------------------- */
+  /* MOBILE ABOUT */
 
   .about-section {
-    padding:
-      106px
-      0
-      90px;
+    padding: 106px 0 90px;
   }
 
   .about-page {
     width: 100%;
-
     display: flex;
     flex-direction: column;
-
     gap: 54px;
   }
 
   .about-portrait {
     width: 100%;
     max-width: none;
-
     margin: 0;
   }
 
@@ -1074,10 +991,7 @@ button:focus-visible {
   .about-content {
     width: 100%;
     max-width: none;
-
-    padding:
-      0
-      var(--side-padding);
+    padding: 0 var(--side-padding);
   }
 
   .about-content .eyebrow {
@@ -1086,12 +1000,7 @@ button:focus-visible {
 
   .about-content h1 {
     max-width: 340px;
-
-    margin:
-      0
-      0
-      40px;
-
+    margin: 0 0 40px;
     font-size: clamp(52px, 15vw, 70px);
     line-height: 0.92;
     letter-spacing: -0.06em;
@@ -1111,13 +1020,10 @@ button:focus-visible {
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE CONTACT
-     ------------------------------------------------------- */
+  /* MOBILE CONTACT */
 
   .project-section {
     min-height: 100svh;
-
     padding-top: 125px;
     padding-bottom: 78px;
   }
@@ -1128,16 +1034,13 @@ button:focus-visible {
 
   .project-content {
     width: 100%;
-
     grid-template-columns: 1fr;
-
     gap: 64px;
   }
 
   .project-content h1,
   .project-content h2 {
     max-width: 360px;
-
     font-size: clamp(58px, 16vw, 78px);
     line-height: 0.89;
     letter-spacing: -0.065em;
@@ -1146,9 +1049,7 @@ button:focus-visible {
   .project-copy {
     width: 90%;
     max-width: 355px;
-
     margin-left: auto;
-
     padding-top: 0;
   }
 
@@ -1163,20 +1064,13 @@ button:focus-visible {
 
   .project-copy .button {
     width: auto;
-
     min-height: 46px;
-
     margin-top: 20px;
-
-    padding:
-      0
-      20px;
+    padding: 0 20px;
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE FINE ART
-     ------------------------------------------------------- */
+  /* MOBILE FINE ART */
 
   .fine-art-section {
     padding-top: 115px;
@@ -1185,13 +1079,8 @@ button:focus-visible {
 
   .section-intro {
     display: block;
-
     width: 100%;
-
-    margin:
-      0
-      0
-      78px;
+    margin: 0 0 78px;
   }
 
   .section-intro .eyebrow {
@@ -1200,9 +1089,7 @@ button:focus-visible {
 
   .section-intro h1 {
     max-width: 355px;
-
     margin-bottom: 24px;
-
     font-size: clamp(48px, 13.5vw, 64px);
     line-height: 0.94;
     letter-spacing: -0.055em;
@@ -1210,84 +1097,59 @@ button:focus-visible {
 
   .section-description {
     max-width: 325px;
-
     font-size: 14px;
     line-height: 1.7;
   }
 
   .fine-art-grid {
     width: 100%;
-
     display: block;
   }
 
   .fine-art-item {
     min-height: 58svh;
-
     margin-top: 0;
-
     padding: 16px;
   }
 
   .fine-art-one {
     width: 94%;
-
     margin-right: auto;
   }
 
   .fine-art-two {
     width: 72%;
     min-height: 52svh;
-
-    margin:
-      90px
-      0
-      0
-      auto;
+    margin: 90px 0 0 auto;
   }
 
   .fine-art-three {
     width: 86%;
     min-height: 56svh;
-
-    margin:
-      90px
-      auto
-      0
-      0;
+    margin: 90px auto 0 0;
   }
 
   .fine-art-item span {
     font-size: 11px;
-
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE FOOTER
-     ------------------------------------------------------- */
+  /* MOBILE FOOTER */
 
   .footer {
-    padding:
-      28px
-      var(--side-padding);
-
+    padding: 28px var(--side-padding);
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
     gap: 20px;
-
     font-size: 10px;
   }
 
   .footer-links {
     width: auto;
-
     gap: 20px;
-
     justify-content: flex-end;
   }
 }
