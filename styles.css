@@ -1,5 +1,5 @@
 /* =========================================================
-   ROMAIN BAYLET — MAIN WEBSITE STYLES
+   ROMAIN BAYLET WEBSITE
    ========================================================= */
 
 :root {
@@ -639,7 +639,9 @@ button:focus-visible {
 }
 
 
-/* PRINT DETAILS */
+/* =========================================================
+   FINE ART PRINT DETAILS
+   ========================================================= */
 
 .fine-art-print {
   margin-top: 48px;
@@ -668,7 +670,7 @@ button:focus-visible {
   letter-spacing: -0.025em;
 }
 
-.fine-art-order {
+.fine-art-enquiry {
   position: relative;
   margin-top: 21px;
   display: inline-block;
@@ -676,9 +678,10 @@ button:focus-visible {
   color: var(--text);
   font-size: 11px;
   font-weight: 500;
+  transition: opacity var(--transition);
 }
 
-.fine-art-order::after {
+.fine-art-enquiry::after {
   content: "";
   position: absolute;
   left: 0;
@@ -689,7 +692,11 @@ button:focus-visible {
   transition: width var(--transition);
 }
 
-.fine-art-order:hover::after {
+.fine-art-enquiry:hover {
+  opacity: .7;
+}
+
+.fine-art-enquiry:hover::after {
   width: 35%;
 }
 
@@ -1226,7 +1233,7 @@ button:focus-visible {
     font-size: 12px;
   }
 
-  .fine-art-order {
+  .fine-art-enquiry {
     margin-top: 12px;
     padding-bottom: 3px;
     font-size: 8px;
@@ -1269,5 +1276,4 @@ button:focus-visible {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
-
 }
